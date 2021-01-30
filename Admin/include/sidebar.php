@@ -42,6 +42,7 @@
             <li><a href="#">Link in level 2</a></li>
           </ul>
         </li>
+        <li><a href="admin-user.php"><i class="fa fa-users"></i> <span>Admin User</span></a></li>
         <li><a href="#"><i class="fa fa-clone"></i> <span>Categories</span></a></li>
         <li><a href="#"><i class="fa fa-comment-o"></i> <span>Comments</span></a></li>
         <li class="treeview">

@@ -1,9 +1,14 @@
-<?php include ('include/header.php'); ?>
-  <!-- Left side column. contains the logo and sidebar -->
-  <?php include ('include/sidebar.php'); ?>
-
-  <!-- Content Wrapper. Contains page content -->
-  <?php include ('include/main.php') ?>
-
-  <!-- Main Footer -->
-  <?php include ('include/footer.php'); ?>
+<?php session_start();
+  if(!isset($_SESSION["userid"])){
+    header ("Location: login.php");
+  }else{
+    include ('include/conn.php'); 
+    include ('include/header.php'); 
+    //<!-- Left side column. contains the logo and sidebar -->
+    include ('include/sidebar.php'); 
+    //<!-- Content Wrapper. Contains page content -->
+    include ('include/main.php');
+    //<!-- Main Footer -->
+    include ('include/footer.php'); 
+  }
+?>
