@@ -6,28 +6,29 @@ $email = $_POST['email'];
 $name = $_POST['name'];
 $password = $_POST['password'];
 $passwordConfirm = $_POST['passwordcon'];
-$phone = $_POST['phone'];
 $cell = $_POST['cell'];
-$fax = $_POST['fax'];
 $country = $_POST['country'];
 $address = $_POST['address'];
 $zip = $_POST['zip'];
-$files = $_FILES['file'];
-$filename = $files['name'];
-$filrerror = $files['error'];
-$filetemp = $files['tmp_name'];
-$fileext = explode('.', $filename);
-$filecheck = strtolower(end($fileext));
-$fileextstored = array('png' , 'jpg' , 'jpeg');
+// $files = $_FILES['file'];
+// $filename = $files['name'];
+// $filrerror = $files['error'];
+// $filetemp = $files['tmp_name'];
+// $fileext = explode('.', $filename);
+// $filecheck = strtolower(end($fileext));
+// $fileextstored = array('png' , 'jpg' , 'jpeg');
+$filename = $_FILES["file"]["name"]; 
+$tempname = $_FILES["file"]["tmp_name"];     
+$folder = "img/".$filename; 
 
-if(in_array($filecheck, $fileextstored)){
+if(move_uploaded_file($tempname, $folder)){
 
-    $destinationfile = $_SERVER['DOCUMENT_ROOT'].'img/'.$filename;
-    move_uploaded_file($filetemp, $destinationfile);
+    // $destinationfile = $_SERVER['DOCUMENT_ROOT'].'img/'.$filename;
+    // move_uploaded_file($filetemp, $destinationfile);
 
-    $sql = "INSERT INTO `signup`(`Name`, `Email`, `PASSWORD`, `Phone_No`,`mobile`, `Fax`, `Address`, `ZipCode`, `User_Image`, `Country`)
-     VALUES
-      ('$name','$email','$password','$phone','$cell','$fax','$address','$zip','$destinationfile','$country')";
+    $sql = "INSERT INTO `signup`(`user_name`, `user_email`, `user_password`, `user_mobile`, `user_address`, `user_zipcode`, `user_image`, `user_country`) 
+    VALUES 
+      ('$name','$email','$password','$cell','$address','$zip','$filename','$country')";
 
 $result = mysqli_query($db, $sql);
 
@@ -52,9 +53,9 @@ else{
 
 else{
 
-      $sql = "INSERT INTO `signup`(`Name`, `Email`, `PASSWORD`, `Phone_No`,`mobile`, `Fax`, `Address`, `ZipCode`, `User_Image`, `Country`)
-      VALUES
-       ('$name','$email','$password','$phone','$cell','$fax','$address','$zip','img/no.jpg','$country')";
+      $sql = "INSERT INTO `signup`(`user_name`, `user_email`, `user_password`, `user_mobile`, `user_address`, `user_zipcode`, `user_image`, `user_country`) 
+      VALUES 
+        ('$name','$email','$password','$cell','$address','$zip','img/no.jpg','$country')";
 
 $result = mysqli_query($db, $sql);
 
