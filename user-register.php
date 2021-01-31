@@ -38,42 +38,42 @@
           <div class="col-md-12" style="margin-top: 10px;">
             <form action="include/user-register-handler.php" method="post" enctype="multipart/form-data">
               <div class="form-group">
+              <div class="col-sm-6">
+                  <label for="fname" class="form-label">Full Name:</label>
+                  <input type="fname" class="form-control" id="fname" placeholder="Enter Full Name" name="name" required>  
+                </div>
                 <div class="col-sm-6">
                   <label for="email" class="form-label">Email address:</label>
                   <input type="email" class="form-control" id="email" placeholder="Enter a valid email" name="email" required>
                 </div>
-                <div class="col-sm-6">
-                  <label for="pwd" class="form-label">Password:</label>
-                  <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="password" required>
-                </div>
               </div>
                           
               <div class="form-group">
+              <div class="col-sm-6">
+                  <label for="pwd" class="form-label">Password:</label>
+                  <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="password" required>
+                </div>
                 <div class="col-sm-6">
                   <label for="pwd" class="form-label">Password (Confirm):</label>
                   <input type="password" class="form-control" id="pwd" placeholder="Re-enter password" name="passwordcon" required>  
                 </div>
-                <div class="col-sm-6">
-                  <label for="fname" class="form-label">Full Name:</label>
-                  <input type="fname" class="form-control" id="fname" placeholder="Enter Full Name" name="name" required>  
-                </div>
               </div>
 
               <div class="form-group">
-                <div class="col-sm-6">
-                  <label for="phone" class="form-label">Phone:</label>
-                  <input type="tel" class="form-control" id="email" placeholder="Enter Phone" name="phone" required>
-                </div>
                 <div class="col-sm-6">
                   <label for="pwd" class="form-label">Cell / Mobile (Format 346-9999999):</label>
                   <input type="tel" class="form-control" id="pwd" placeholder="Enter Mobile Number" name="cell" required>
                 </div>
+                <div class="col-sm-6">
+                  <label for="file" class="form-label">User Image:</label>
+                  <input type="file" class="form-control" id="file" name="file">
+                </div>
               </div>
 
               <div class="form-group">
                 <div class="col-sm-6">
-                  <label for="email" class="form-label">Fax:</label>
-                  <input type="text" class="form-control" id="email" placeholder="Enter Fax" name="fax">
+                  <label for="email" class="form-label">Zip Code:</label>
+                  <input type="number" class="form-control" id="email" placeholder="Enter Zip Code" name="zip">
                 </div>
                 <div class="col-sm-6">
                   <label for="country" class="form-label">Country:</label>
@@ -331,17 +331,6 @@
                 </div>
               </div>
 
-              <div class="form-group">
-                <div class="col-sm-6">
-                  <label for="email" class="form-label">Zip Code:</label>
-                  <input type="number" class="form-control" id="email" placeholder="Enter Zip Code" name="zip">
-                </div>
-                <div class="col-sm-6">
-                  <label for="file" class="form-label">User Image:</label>
-                  <input type="file" class="form-control" id="file" name="file">
-                </div>
-              </div>
-                
               <div class="form-group">
                  <div class="col-sm-12">
                   <label for="pwd" class="form-label">Address:</label>
