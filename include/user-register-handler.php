@@ -13,6 +13,7 @@ if (isset($_POST['user-signup'])) {
     $filename = $_FILES["file"]["name"]; 
     $tempname = $_FILES["file"]["tmp_name"];     
     $folder = "../img/".$filename; 
+    $alerts = $_POST['alerts'];
 
     if (empty($name)||empty($email)||empty($password)||empty($passwordConfirm)||empty($cell)||empty($country)||empty($address)) {
         header("Location: ../user-register.php?error=emptyfields&name=".$name."&email=".$email."&cell=".$cell."&country=".$country."&address=".$address);
@@ -33,7 +34,7 @@ if (isset($_POST['user-signup'])) {
         $sql = "SELECT * FROM `signup` WHERE `user_email`=? OR `user_mobile`=?";
         $stmt = mysqli_stmt_init($db);
         if (!mysqli_stmt_prepare($stmt,$sql)) {
-        header("Location: ../user-register.php?error=sqlerror");
+        header("Location: ../user-register.php?error=sqlerror&emailormobilealreadytaken");
         exit();
         }else{
             mysqli_stmt_bind_param($stmt,"ss",$cell,$email);
@@ -44,14 +45,14 @@ if (isset($_POST['user-signup'])) {
                 header("Location: ../user-register.php?error=celltaken&error=emailtaken");
                 exit();
             }elseif(move_uploaded_file($tempname, $folder)){
-                $sql = "INSERT INTO `signup`(`user_name`, `user_email`, `user_password`, `user_mobile`, `user_address`, `user_zipcode`, `user_image`, `user_country`)VALUES(?,?,?,?,?,?,?,?)";
+                $sql = "INSERT INTO `signup`(`user_name`, `user_email`, `user_password`, `user_mobile`, `user_address`, `user_zipcode`, `user_image`, `user_country`, `sms_alert`)VALUES(?,?,?,?,?,?,?,?,?)";
                 mysqli_stmt_execute($stmt);
                 if (!mysqli_stmt_prepare($stmt,$sql)) {
-                    header("Location: ../user-register.php?error=sqlerror");
+                    header("Location: ../user-register.php?error=sqlerror&DataIsNotComplete");
                     exit();
                 }else{
                     $hashedPwd =password_hash($password,PASSWORD_DEFAULT);
-                    mysqli_stmt_bind_param($stmt,"ssssssss",$name,$email,$hashedPwd,$cell,$address,$zip,$filename,$country);
+                    mysqli_stmt_bind_param($stmt,"sssssssss",$name,$email,$hashedPwd,$cell,$address,$zip,$filename,$country,$alerts);
                     mysqli_stmt_execute($stmt);
                 ?>
                 <script type="text/javascript">
@@ -62,15 +63,15 @@ if (isset($_POST['user-signup'])) {
                 exit();
                 }
             }else{
-                $sql = "INSERT INTO `signup`(`user_name`, `user_email`, `user_password`, `user_mobile`, `user_address`, `user_zipcode`, `user_image`, `user_country`)VALUES(?,?,?,?,?,?,?,?)";
+                $sql = "INSERT INTO `signup`(`user_name`, `user_email`, `user_password`, `user_mobile`, `user_address`, `user_zipcode`, `user_image`, `user_country`,`sms_alert`)VALUES(?,?,?,?,?,?,?,?,?)";
                 mysqli_stmt_execute($stmt);
                 if (!mysqli_stmt_prepare($stmt,$sql)) {
-                    header("Location: ../user-register.php?error=sqlerror");
+                    header("Location: ../user-register.php?error=sqlerror&DataIsNotCompleteWithoutImage");
                     exit();
                 }else{
                     $hashedPwd =password_hash($password,PASSWORD_DEFAULT);
                     $image = 'img/no.jpg';
-                    mysqli_stmt_bind_param($stmt,"ssssssss",$name,$email,$hashedPwd,$cell,$address,$zip,$image,$country);
+                    mysqli_stmt_bind_param($stmt,"sssssssss",$name,$email,$hashedPwd,$cell,$address,$zip,$image,$country,$alerts);
                     mysqli_stmt_execute($stmt);
                 ?>
                 <script type="text/javascript">

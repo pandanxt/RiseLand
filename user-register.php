@@ -61,8 +61,8 @@
 
               <div class="form-group">
                 <div class="col-sm-6">
-                  <label for="pwd" class="form-label">Cell / Mobile (Format 346-9999999):</label>
-                  <input type="tel" class="form-control" id="pwd" placeholder="Enter Mobile Number" name="cell" required>
+                  <label for="pwd" class="form-label">Cell / Mobile:</label>
+                  <input type="number" class="form-control" id="pwd" placeholder="Enter Mobile Number" name="cell" required>
                 </div>
                 <div class="col-sm-6">
                   <label for="file" class="form-label">User Image:</label>
@@ -73,7 +73,7 @@
               <div class="form-group">
                 <div class="col-sm-6">
                   <label for="email" class="form-label">Zip Code:</label>
-                  <input type="number" class="form-control" id="email" placeholder="Enter Zip Code" name="zip">
+                  <input type="number" class="form-control" id="email" placeholder="Enter Zip Code" name="zip" required>
                 </div>
                 <div class="col-sm-6">
                   <label for="country" class="form-label">Country:</label>
@@ -243,7 +243,7 @@
                     <option value="Norfolk Island">Norfolk Island</option>
                     <option value="Norway">Norway</option>
                     <option value="Oman">Oman</option>
-                    <option value="Pakistan">Pakistan</option>
+                    <option value="Pakistan" selected>Pakistan</option>
                     <option value="Palau Island">Palau Island</option>
                     <option value="Palestine">Palestine</option>
                     <option value="Panama">Panama</option>
@@ -334,19 +334,19 @@
               <div class="form-group">
                  <div class="col-sm-12">
                   <label for="pwd" class="form-label">Address:</label>
-                  <textarea type="text" class="form-control" id="pwd" placeholder="Enter Address" name="address"></textarea>
+                  <textarea type="text" class="form-control" id="pwd" placeholder="Enter Address" name="address" required></textarea>
                 </div>
               </div>
               
               <div class="form-group">        
                 <div class="col-sm-12">
                   <div class="checkbox">
-                    <label><input type="checkbox" name="remember"> Subscribe with us for alerts on your mobile?</label>
+                    <label><input type="checkbox" name="alerts" value="yes"> Subscribe with us for alerts on your mobile?</label>
                   </div>
                 </div>
                 <div class="col-sm-12">
                   <div class="checkbox">
-                    <label><input type="checkbox" name="remember"> I have read and agree to rise land Terms & Conditions</label>
+                    <label><input type="checkbox" name="policy" required> I have read and agree to rise land Terms & Conditions</label>
                   </div>
                 </div>
               </div>
