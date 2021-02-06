@@ -339,11 +339,11 @@
               </div>
               
               <div class="form-group">        
-                <div class="col-sm-12">
+                <!-- <div class="col-sm-12">
                   <div class="checkbox">
                     <label><input type="checkbox" name="alerts" value="yes"> Subscribe with us for alerts on your mobile?</label>
                   </div>
-                </div>
+                </div> -->
                 <div class="col-sm-12">
                   <div class="checkbox">
                     <label><input type="checkbox" name="policy" required> I have read and agree to rise land Terms & Conditions</label>
