@@ -31,7 +31,7 @@ if (isset($_POST['user-signup'])) {
         header("Location: ../user-register.php?error=passwordcheck&name=".$name."&email=".$email."phone=".$cell);
         exit();
     }else{
-        $sql = "SELECT * FROM `signup` WHERE `user_email`=? OR `user_mobile`=?";
+        $sql = "SELECT * FROM `signup_as_user` WHERE `user_email`=? OR `user_mobile`=?";
         $stmt = mysqli_stmt_init($db);
         if (!mysqli_stmt_prepare($stmt,$sql)) {
         header("Location: ../user-register.php?error=sqlerror&emailormobilealreadytaken");
@@ -45,7 +45,7 @@ if (isset($_POST['user-signup'])) {
                 header("Location: ../user-register.php?error=celltaken&error=emailtaken");
                 exit();
             }elseif(move_uploaded_file($tempname, $folder)){
-                $sql = "INSERT INTO `signup`(`user_name`, `user_email`, `user_password`, `user_mobile`, `user_address`, `user_zipcode`, `user_image`, `user_country`)VALUES(?,?,?,?,?,?,?,?)";
+                $sql = "INSERT INTO `signup_as_user`(`user_name`, `user_email`, `user_password`, `user_mobile`, `user_address`, `user_zipcode`, `user_image`, `user_country`)VALUES(?,?,?,?,?,?,?,?)";
                 mysqli_stmt_execute($stmt);
                 if (!mysqli_stmt_prepare($stmt,$sql)) {
                     header("Location: ../user-register.php?error=sqlerror&DataIsNotComplete");
@@ -63,7 +63,7 @@ if (isset($_POST['user-signup'])) {
                 exit();
                 }
             }else{
-                $sql = "INSERT INTO `signup`(`user_name`, `user_email`, `user_password`, `user_mobile`, `user_address`, `user_zipcode`, `user_image`, `user_country`)VALUES(?,?,?,?,?,?,?,?)";
+                $sql = "INSERT INTO `signup_as_user`(`user_name`, `user_email`, `user_password`, `user_mobile`, `user_address`, `user_zipcode`, `user_image`, `user_country`)VALUES(?,?,?,?,?,?,?,?)";
                 mysqli_stmt_execute($stmt);
                 if (!mysqli_stmt_prepare($stmt,$sql)) {
                     header("Location: ../user-register.php?error=sqlerror&DataIsNotCompleteWithoutImage");
