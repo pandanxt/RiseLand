@@ -20,13 +20,20 @@
             <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user"></span><b> Register</b></a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="width:max-content;padding:10px 10px 10px 0px;margin-right:20px;">
                 <ol style="text-decoration:none;">
-                  <li><a class="dropdown-item" href="agent-register.php" style="text-decoration:none;"><b>Agent Account <small>(For Agency)</small></b></a></li>
-                  <li><a class="dropdown-item" href="user-register.php" style="text-decoration:none;"><b>User Account <small>(Direct Buy-Sell)</small></b></a></li>
+                  <li><a class="dropdown-item" href="agent-register.php" style="text-decoration:none;"><b>Agent Register <small>(For Agency)</small></b></a></li>
+                  <li><a class="dropdown-item" href="user-register.php" style="text-decoration:none;"><b>User Register <small>(Direct Buy-Sell)</small></b></a></li>
                 </ol>
               </div>
             </li>
-              <li class="nav-item"><a href="login.php"><span class="glyphicon glyphicon-log-in"></span><b> Login</b></a></li>
-              
+              <!-- <li class="nav-item"><a href="login.php"><span class="glyphicon glyphicon-log-in"></span><b> Login</b></a></li> -->
+              <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="navbarDropdownLogin" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-log-in"></span><b> Login</b></a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownLogin" style="width:max-content;padding:10px 10px 10px 0px;margin-right:20px;">
+                <ol style="text-decoration:none;">
+                  <li><a class="dropdown-item" href="login.php?account=agent" style="text-decoration:none;"><b>Agent Login <small>(For Agency)</small></b></a></li>
+                  <li><a class="dropdown-item" href="login.php?account=user" style="text-decoration:none;"><b>User Login <small>(Direct Buy-Sell)</small></b></a></li>
+                </ol>
+              </div>
+            </li>
             </ul>
           </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
