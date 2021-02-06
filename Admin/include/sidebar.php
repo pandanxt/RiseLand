@@ -52,8 +52,8 @@
               </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="#">Link in level 2</a></li>
-            <li><a href="#">Link in level 2</a></li>
+            <li><a href="simple-user.php">Simple Users</a></li>
+            <li><a href="agent-user.php">Agent Users</a></li>
           </ul>
         </li>
         <li><a href="#"><i class="fa fa-user"></i> <span>Profile</span></a></li>
