@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.9
+-- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 30, 2021 at 07:45 PM
--- Server version: 10.1.31-MariaDB
--- PHP Version: 7.2.3
+-- Generation Time: Feb 06, 2021 at 02:26 PM
+-- Server version: 10.4.17-MariaDB
+-- PHP Version: 8.0.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -25,12 +24,12 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `country`
+-- Table structure for table `city`
 --
 
-CREATE TABLE `country` (
-  `Country_ID` int(10) NOT NULL,
-  `Countrry_Name` varchar(255) NOT NULL,
+CREATE TABLE `city` (
+  `City_ID` int(10) NOT NULL,
+  `City_Name` varchar(255) NOT NULL,
   `Province_ID` int(10) NOT NULL,
   `Society_ID` int(10) NOT NULL,
   `Plot_House_ID` int(10) NOT NULL,
@@ -109,48 +108,43 @@ CREATE TABLE `searching` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `signup`
+-- Table structure for table `signup_as_agent`
 --
 
-CREATE TABLE `signup` (
-  `USER_ID` int(11) NOT NULL,
-  `Name` varchar(255) NOT NULL,
-  `Email` varchar(255) DEFAULT NULL,
-  `PASSWORD` varchar(255) NOT NULL,
-  `Confirmed_Password` varchar(255) NOT NULL,
-  `Phone_No` int(10) DEFAULT NULL,
-  `Fax` int(10) DEFAULT NULL,
-  `Address` varchar(255) DEFAULT NULL,
-  `ZipCode` int(10) DEFAULT NULL,
-  `User_Image` tinyblob,
-  `Country` varchar(255) DEFAULT NULL
+CREATE TABLE `signup_as_agent` (
+  `agent_id` int(11) NOT NULL,
+  `agent_name` varchar(255) NOT NULL,
+  `agent_email` varchar(255) NOT NULL,
+  `agent_password` varchar(255) NOT NULL,
+  `agent_phone` varchar(20) NOT NULL,
+  `agent_address` varchar(255) NOT NULL,
+  `agent_zipcode` int(10) NOT NULL,
+  `agent_image` varchar(100) NOT NULL,
+  `agent_country` varchar(255) NOT NULL,
+  `agent_city_deal` varchar(255) NOT NULL,
+  `agent_agency_name` varchar(255) NOT NULL,
+  `agent_services` varchar(255) NOT NULL,
+  `agent_company_phone` varchar(20) NOT NULL,
+  `agent_company_address` varchar(255) NOT NULL,
+  `agent_company_logo` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `signup_as_agent`
+-- Table structure for table `signup_as_user`
 --
 
-CREATE TABLE `signup_as_agent` (
-  `USER_ID` int(11) NOT NULL,
-  `Name` varchar(255) NOT NULL,
-  `Email` varchar(255) DEFAULT NULL,
-  `PASSWORD` varchar(255) NOT NULL,
-  `Confirmed_Password` varchar(255) NOT NULL,
-  `Phone_No` int(10) DEFAULT NULL,
-  `Fax` int(10) DEFAULT NULL,
-  `Address` varchar(255) DEFAULT NULL,
-  `ZipCode` int(10) DEFAULT NULL,
-  `User_Image` tinyblob,
-  `Country` varchar(255) DEFAULT NULL,
-  `Select_City_You_Deal` varchar(255) DEFAULT NULL,
-  `Agency_Name` varchar(255) DEFAULT NULL,
-  `Description_of_Services` varchar(255) DEFAULT NULL,
-  `Company_Name` varchar(255) DEFAULT NULL,
-  `Company_No` int(11) DEFAULT NULL,
-  `Company_Address` varchar(255) DEFAULT NULL,
-  `Company_Logo` tinyblob
+CREATE TABLE `signup_as_user` (
+  `user_id` int(11) NOT NULL,
+  `user_name` varchar(50) NOT NULL,
+  `user_email` varchar(50) NOT NULL,
+  `user_password` longtext NOT NULL,
+  `user_mobile` varchar(50) NOT NULL,
+  `user_address` varchar(255) NOT NULL,
+  `user_zipcode` int(10) NOT NULL,
+  `user_image` varchar(100) DEFAULT NULL,
+  `user_country` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -168,15 +162,38 @@ CREATE TABLE `society` (
   `USER_ID` int(10) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbladmin`
+--
+
+CREATE TABLE `tbladmin` (
+  `admin_id` int(20) NOT NULL,
+  `fname` varchar(255) CHARACTER SET latin1 NOT NULL,
+  `lname` varchar(255) CHARACTER SET latin1 NOT NULL,
+  `email` varchar(255) CHARACTER SET latin1 NOT NULL,
+  `position` varchar(255) CHARACTER SET latin1 NOT NULL,
+  `username` varchar(255) CHARACTER SET latin1 NOT NULL,
+  `pass` longtext CHARACTER SET latin1 NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tbladmin`
+--
+
+INSERT INTO `tbladmin` (`admin_id`, `fname`, `lname`, `email`, `position`, `username`, `pass`) VALUES
+(1, 'Mubeen', 'Shah', 'shahmobeen333@gmail.com', 'Admin', 'DevilHost', '$2y$10$fy4eA/3OoKQdtUPMfBAQhOx8.m5l972rtzWk6XzIhQj6QpgkC0Clu');
+
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `country`
+-- Indexes for table `city`
 --
-ALTER TABLE `country`
-  ADD PRIMARY KEY (`Country_ID`),
+ALTER TABLE `city`
+  ADD PRIMARY KEY (`City_ID`),
   ADD KEY `FK_PC` (`Province_ID`),
   ADD KEY `FK_CS` (`Society_ID`),
   ADD KEY `FK_CPH` (`Plot_House_ID`),
@@ -187,8 +204,7 @@ ALTER TABLE `country`
 --
 ALTER TABLE `plots`
   ADD PRIMARY KEY (`Plot_House_ID`),
-  ADD UNIQUE KEY `Plot/House_ID` (`Plot_House_ID`),
-  ADD KEY `USER_ID` (`USER_ID`);
+  ADD UNIQUE KEY `Plot/House_ID` (`Plot_House_ID`);
 
 --
 -- Indexes for table `property`
@@ -198,45 +214,53 @@ ALTER TABLE `property`
   ADD KEY `FK_CP` (`Country_ID`),
   ADD KEY `FK_PS` (`Society_ID`),
   ADD KEY `FK_PPH` (`Plot_House_ID`),
-  ADD KEY `FK_PP` (`Province_ID`),
-  ADD KEY `USER_ID` (`USER_ID`);
+  ADD KEY `FK_PP` (`Province_ID`);
 
 --
 -- Indexes for table `provinces`
 --
 ALTER TABLE `provinces`
-  ADD PRIMARY KEY (`Province_ID`),
-  ADD KEY `USER_ID` (`USER_ID`);
+  ADD PRIMARY KEY (`Province_ID`);
 
 --
 -- Indexes for table `searching`
 --
 ALTER TABLE `searching`
-  ADD KEY `FK_SP` (`Property_ID`),
-  ADD KEY `USER_ID` (`USER_ID`);
+  ADD KEY `FK_SP` (`Property_ID`);
 
 --
 -- Indexes for table `signup_as_agent`
 --
 ALTER TABLE `signup_as_agent`
-  ADD PRIMARY KEY (`USER_ID`);
+  ADD PRIMARY KEY (`agent_id`);
+
+--
+-- Indexes for table `signup_as_user`
+--
+ALTER TABLE `signup_as_user`
+  ADD PRIMARY KEY (`user_id`);
 
 --
 -- Indexes for table `society`
 --
 ALTER TABLE `society`
-  ADD PRIMARY KEY (`Society_ID`),
-  ADD KEY `fk_sS` (`USER_ID`);
+  ADD PRIMARY KEY (`Society_ID`);
+
+--
+-- Indexes for table `tbladmin`
+--
+ALTER TABLE `tbladmin`
+  ADD PRIMARY KEY (`admin_id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT for table `country`
+-- AUTO_INCREMENT for table `city`
 --
-ALTER TABLE `country`
-  MODIFY `Country_ID` int(10) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `city`
+  MODIFY `City_ID` int(10) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `plots`
@@ -260,7 +284,13 @@ ALTER TABLE `provinces`
 -- AUTO_INCREMENT for table `signup_as_agent`
 --
 ALTER TABLE `signup_as_agent`
-  MODIFY `USER_ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `agent_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `signup_as_user`
+--
+ALTER TABLE `signup_as_user`
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `society`
@@ -269,52 +299,58 @@ ALTER TABLE `society`
   MODIFY `Society_ID` int(10) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `tbladmin`
+--
+ALTER TABLE `tbladmin`
+  MODIFY `admin_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- Constraints for dumped tables
 --
 
 --
--- Constraints for table `country`
+-- Constraints for table `city`
 --
-ALTER TABLE `country`
+ALTER TABLE `city`
   ADD CONSTRAINT `FK_CPH` FOREIGN KEY (`Plot_House_ID`) REFERENCES `plots` (`Plot_House_ID`),
   ADD CONSTRAINT `FK_CS` FOREIGN KEY (`Society_ID`) REFERENCES `society` (`Society_ID`),
   ADD CONSTRAINT `FK_PC` FOREIGN KEY (`Province_ID`) REFERENCES `provinces` (`Province_ID`),
-  ADD CONSTRAINT `country_ibfk_1` FOREIGN KEY (`USER_ID`) REFERENCES `signup_as_agent` (`USER_ID`);
+  ADD CONSTRAINT `city_ibfk_1` FOREIGN KEY (`USER_ID`) REFERENCES `signup_as_agent` (`agent_id`);
 
 --
 -- Constraints for table `plots`
 --
 ALTER TABLE `plots`
-  ADD CONSTRAINT `plots_ibfk_1` FOREIGN KEY (`USER_ID`) REFERENCES `signup_as_agent` (`USER_ID`);
+  ADD CONSTRAINT `plots_ibfk_1` FOREIGN KEY (`USER_ID`) REFERENCES `signup_as_agent` (`agent_id`);
 
 --
 -- Constraints for table `property`
 --
 ALTER TABLE `property`
-  ADD CONSTRAINT `FK_CP` FOREIGN KEY (`Country_ID`) REFERENCES `country` (`Country_ID`),
+  ADD CONSTRAINT `FK_CP` FOREIGN KEY (`Country_ID`) REFERENCES `city` (`City_ID`),
   ADD CONSTRAINT `FK_PP` FOREIGN KEY (`Province_ID`) REFERENCES `provinces` (`Province_ID`),
   ADD CONSTRAINT `FK_PPH` FOREIGN KEY (`Plot_House_ID`) REFERENCES `plots` (`Plot_House_ID`),
   ADD CONSTRAINT `FK_PS` FOREIGN KEY (`Society_ID`) REFERENCES `society` (`Society_ID`),
-  ADD CONSTRAINT `property_ibfk_1` FOREIGN KEY (`USER_ID`) REFERENCES `signup_as_agent` (`USER_ID`);
+  ADD CONSTRAINT `property_ibfk_1` FOREIGN KEY (`USER_ID`) REFERENCES `signup_as_agent` (`agent_id`);
 
 --
 -- Constraints for table `provinces`
 --
 ALTER TABLE `provinces`
-  ADD CONSTRAINT `provinces_ibfk_1` FOREIGN KEY (`USER_ID`) REFERENCES `signup_as_agent` (`USER_ID`);
+  ADD CONSTRAINT `provinces_ibfk_1` FOREIGN KEY (`USER_ID`) REFERENCES `signup_as_agent` (`agent_id`);
 
 --
 -- Constraints for table `searching`
 --
 ALTER TABLE `searching`
   ADD CONSTRAINT `FK_SP` FOREIGN KEY (`Property_ID`) REFERENCES `property` (`Property_ID`),
-  ADD CONSTRAINT `searching_ibfk_1` FOREIGN KEY (`USER_ID`) REFERENCES `signup_as_agent` (`USER_ID`);
+  ADD CONSTRAINT `searching_ibfk_1` FOREIGN KEY (`USER_ID`) REFERENCES `signup_as_agent` (`agent_id`);
 
 --
 -- Constraints for table `society`
 --
 ALTER TABLE `society`
-  ADD CONSTRAINT `fk_sS` FOREIGN KEY (`USER_ID`) REFERENCES `signup_as_agent` (`USER_ID`);
+  ADD CONSTRAINT `fk_sS` FOREIGN KEY (`USER_ID`) REFERENCES `signup_as_agent` (`agent_id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
