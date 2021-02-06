@@ -56,7 +56,7 @@ if (isset($_POST['agent-signup'])) {
                 header("Location: ../agent-register.php?error=celltaken&error=emailtaken");
                 exit();
             }elseif(move_uploaded_file($tempname, $folder) && move_uploaded_file($tempnameCompany, $folderCompany)){
-                $sql = "INSERT INTO `signup_as_agent`(`agent_name`, `agent_email`, `agent_password`, `agent_phone`, `agent_address`, `agent_zipcode`, `agent_image`, `agent_country`, `agent_city_deal`, `agent_agency_name`, `agent_services`, `agent_company_phone`, `agent_company_address`, `agent_company_logo`)VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,)";
+                $sql = "INSERT INTO `signup_as_agent`(`agent_name`, `agent_email`, `agent_password`, `agent_phone`, `agent_address`, `agent_zipcode`, `agent_image`, `agent_country`, `agent_city_deal`, `agent_agency_name`, `agent_services`, `agent_company_phone`, `agent_company_address`, `agent_company_logo`)VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
                 mysqli_stmt_execute($stmt);
                 if (!mysqli_stmt_prepare($stmt,$sql)) {
                     header("Location: ../agent-register.php?error=sqlerror&DataIsNotComplete");
