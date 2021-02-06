@@ -40,42 +40,41 @@
               <div class="form-group">
               <div class="col-sm-6">
                   <label for="name" class="form-label">Full Name:</label>
-                  <input type="name" class="form-control" id="name" placeholder="Enter Full Name" name="name" required>  
+                  <input type="name" class="form-control" id="name" placeholder="Enter Full Name" name="name" required />  
                 </div>
                 <div class="col-sm-6">
                   <label for="email" class="form-label">Email address:</label>
-                  <input type="email" class="form-control" id="email" placeholder="Enter a Valid Email" name="email" required>
+                  <input type="email" class="form-control" id="email" placeholder="Enter a Valid Email" name="email" required />
                 </div>
               </div>
                           
               <div class="form-group">
                 <div class="col-sm-6">
                   <label for="pwd" class="form-label">Password:</label>
-                  <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="password">
+                  <input type="password" class="form-control" id="pwd" placeholder="Enter Password" name="password" required />
                 </div>
                 <div class="col-sm-6">
                   <label for="pwd" class="form-label">Password (Confirm):</label>
-                  <input type="password" class="form-control" id="pwd" placeholder="Re-Enter password" name="passwordcon">  
+                  <input type="password" class="form-control" id="pwd" placeholder="Re-Enter Password" name="passwordcon" required />  
                 </div>
               </div>
               
               <div class="form-group">
-                <div class="col-sm-6">
-                  <label for="email" class="form-label">Zip Code:</label>
-                  <input type="number" class="form-control" id="email" placeholder="Enter Zip Code" name="zip" required>
+              <div class="col-sm-6">
+                  <label for="pwd" class="form-label">Cell / Mobile:</label>
+                  <input type="number" class="form-control" id="pwd" placeholder="Enter Mobile Without (-)" name="cell" required />
                 </div>
                 <div class="col-sm-6">
-                  <label for="pwd" class="form-label">Cell / Mobile:</label>
-                  <input type="number" class="form-control" id="pwd" placeholder="Enter password" name="cell" required>
+                  <label for="email" class="form-label">Zip Code:</label>
+                  <input type="number" class="form-control" id="email" placeholder="Enter Zip Code" name="zip" required />
                 </div>
               </div>
 
               <div class="form-group">
               <div class="col-sm-6">
                   <label for="country" class="form-label">Country:</label>
-                  <!-- <input type="text" class="form-control" id="country" placeholder="Enter Country" name="country" required> -->
                   <!--Country List-->
-                  <select id="country" name="country" class="form-control">
+                  <select id="country" name="country" class="form-control" required>
                     <option value="Afganistan">Afghanistan</option>
                     <option value="Albania">Albania</option>
                     <option value="Algeria">Algeria</option>
@@ -345,12 +344,10 @@
                   <textarea type="text" class="form-control" id="service" placeholder="Enter Description of Services" name="service" required></textarea>
                 </div>
                 <div class="col-sm-6">
-                  <label for="city" class="form-label">Select Cities You Deal In<br /><small>(Hold ctrl to select multiple cities)</small>:</label>
-                  <!-- <input type="email" class="form-control" id="email" placeholder="Enter password" name="pwd"> -->
-                  <select class="form-control" name="citydeal[]" id="city" multiple required>
+                  <label for="city" class="form-label">Select Cities You Deal In<br /><small>(Hold Ctrl to Select Multiple Cities)</small>:</label>
+                  <select class="form-control" name="citydeal[]" id="city" multiple="multiple" required>
                   <option value="" disabled selected>Select The City</option>
                   <option value="Islamabad">Islamabad</option>
-                  <!-- <option value="" disabled>Punjab Cities</option> -->
                   <option value="Ahmed Nager Chatha">Ahmed Nager Chatha</option>
                   <option value="Ahmadpur East">Ahmadpur East</option>
                   <option value="Ali Khan Abad">Ali Khan Abad</option>
@@ -453,7 +450,6 @@
                   <option value="Vehari">Vehari</option>
                   <option value="Wah Cantonment">Wah Cantonment</option>
                   <option value="Wazirabad">Wazirabad</option>
-                  <!-- <option value="" disabled>Sindh Cities</option> -->
                   <option value="Badin">Badin</option>
                   <option value="Bhirkan">Bhirkan</option>
                   <option value="Rajo Khanani">Rajo Khanani</option>
@@ -510,7 +506,6 @@
                   <option value="Thatta">Thatta</option>
                   <option value="Umerkot">Umerkot</option>
                   <option value="Warah">Warah</option>
-                  <!-- <option value="" disabled>Khyber Cities</option> -->
                   <option value="Abbottabad">Abbottabad</option>
                   <option value="Adezai">Adezai</option>
                   <option value="Alpuri">Alpuri</option>
@@ -557,7 +552,6 @@
                   <option value="Thall">Thall</option>
                   <option value="Timergara">Timergara</option>
                   <option value="Tordher">Tordher</option>
-                  <!-- <option value="" disabled>Balochistan Cities</option> -->
                   <option value="Awaran">Awaran</option>
                   <option value="Barkhan">Barkhan</option>
                   <option value="Chagai">Chagai</option>
@@ -598,8 +592,8 @@
               
               <div class="form-group">
                 <div class="col-sm-6">
-                  <label for="cell" class="form-label">Company Cell:</label>
-                  <input type="number" class="form-control" id="cell" placeholder="Enter Company Cell" name="companycell" required/>
+                  <label for="cell" class="form-label">Company Cell / Mobile:</label>
+                  <input type="number" class="form-control" id="cell" placeholder="Enter Company Mobile" name="companycell" required/>
                 </div>
                 <div class="col-sm-6">
                   <label for="address" class="form-label">Company Address:</label>
@@ -609,7 +603,7 @@
               
               <div class="form-group">
                 <div class="col-sm-6">
-                  <label for="file" class="form-label">User Image:</label>
+                  <label for="file" class="form-label">Agent Image:</label>
                   <input type="file" class="form-control" id="file" name="file" />
                 </div>
                 <div class="col-sm-6">
@@ -619,14 +613,14 @@
               </div>
               
               <div class="form-group">        
-                <div class="col-sm-12">
+                <!-- <div class="col-sm-12">
                   <div class="checkbox">
-                    <label><input type="checkbox" name="alerts"> Subscribe with us for alerts on your mobile?</label>
+                    <label><input type="checkbox" name="alertsms"> Subscribe with us for alerts on your mobile?</label>
                   </div>
-                </div>
+                </div> -->
                 <div class="col-sm-12">
                   <div class="checkbox">
-                    <label><input type="checkbox" name="remember"> I have read and agree to rise land Terms & Conditions</label>
+                    <label><input type="checkbox" name="policy" required> I have read and agree to rise land Terms & Conditions</label>
                   </div>
                 </div>
               </div>
