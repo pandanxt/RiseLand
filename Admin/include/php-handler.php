@@ -10,10 +10,12 @@ $description = $_POST['description'];
 if (empty($name)||empty($location)||empty($description)) {
 	header("Location: ../province-add.php?error=emptyfields&name=".$name."&location=".$location."&description=".$description);
 	exit();
-}else if (!preg_match("/^[a-zA-Z0-9]*$/",$name)) {
-	header("Location: ../province-add.php?error=invalidname=".$name);
-	exit();
-}else{
+}
+// else if (!preg_match("/^[a-zA-Z0-9]*$/",$name)) {
+// 	header("Location: ../province-add.php?error=invalidname=".$name);
+// 	exit();
+// }
+else{
 	$sql = "SELECT * FROM `province` WHERE `province_name`= ?";
 	$stmt = mysqli_stmt_init($db);
 	if (!mysqli_stmt_prepare($stmt,$sql)) {
