@@ -1,3 +1,4 @@
+<?php include('conn.php'); ?>
 <div class="container" style="margin-top: -30px;display: flex;">
         <div style="width: 150px; height: 80px;"><a href="index.php"><img class="img-responsive" src="img/Logo.jpeg"/></a></div>
           <div class="row">
@@ -131,14 +132,26 @@
                 <div role="presentation" class="dropdown space-nav"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Provinces</b></a>
                   <div id="products-menu" class="dropdown-menu clearfix row" role="menu" >
                     <div class="column">
-                        <li class="dropdown-header"><b>Rising Territories</b></li>  
-                          <li class="dropdown-text"><a href="federal-area.php" style="text-decoration: none;">Federal Area</a></li>
-                          <li class="dropdown-text"><a href="punjab.php" style="text-decoration: none;">Punjab</a></li>
+                    <li class="dropdown-header"><b>Rising Territories</b></li>  
+                    <?php 
+                         $province = 'SELECT `province_id`,`province_name` FROM `province`';
+                         $result = mysqli_query($db, $province) or die (mysqli_error($db));
+                        //  if($result){
+                             while ($row = mysqli_fetch_array($result)) {
+                              $id = $row['province_id'];  
+                              $name = $row['province_name'];
+                        //  }
+                    ?>
+                          <li class="dropdown-text"><a href="province.php?action=<?php echo $id; ?>" style="text-decoration: none;"><?php echo $name; ?></a></li>
+                          <!-- <li class="dropdown-text"><a href="punjab.php" style="text-decoration: none;">Punjab</a></li>
                           <li class="dropdown-text"><a href="sindh.php" style="text-decoration: none;">Sindh</a></li>
                           <li class="dropdown-text"><a href="kpk.php" style="text-decoration: none;">KPK</a></li>
                           <li class="dropdown-text"><a href="balochistan.php" style="text-decoration: none;">Balochistan</a></li>
                           <li class="dropdown-text"><a href="gilgit-baltistan.php" style="text-decoration: none;">Gilgit Baltistan</a></li>
-                          <li class="dropdown-text"><a href="azad-kashmir.php" style="text-decoration: none;">Azad Kashmir</a></li>
+                          <li class="dropdown-text"><a href="azad-kashmir.php" style="text-decoration: none;">Azad Kashmir</a></li> -->
+                        <?php
+                             } 
+                        ?>
                     </div>
                   </div>
                 </div>

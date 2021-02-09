@@ -1,10 +1,10 @@
 <footer class="main-footer">
     <!-- To the right -->
     <div class="pull-right hidden-xs">
-      Knowledge Hub
+      Rise Land
     </div>
     <!-- Default to the left -->
-    <strong>Copyright &copy; 2019 <a href="#">Mobeen Shah</a>.</strong> All rights reserved.
+    <strong>Copyright &copy; 2021 <a href="#">Mobeen Shah</a>.</strong> All rights reserved.
   </footer>
   <!-- Add the sidebar's background. This div must be placed
   immediately after the control sidebar -->
