@@ -17,6 +17,7 @@
   <!-- Google Font -->
   <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+  <script src="https://cdn.tiny.cloud/1/6l8pi0wz9amts9zxdlf1pg5gpka75ghjbov0fmv46n3uyga6/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
 </head>
 
 <body class="hold-transition skin-green sidebar-mini">

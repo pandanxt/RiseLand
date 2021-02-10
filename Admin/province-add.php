@@ -37,8 +37,8 @@
                 <input type="text" id="provincelocation" name="location" class="form-control" placeholder="Province Location" required>
             </div>
             <div class="form-group">
-            <label for="provincedescription">Province Description:</label>
-                <textarea type="text" id="provincedescription" name="description" class="form-control" placeholder="Enter Province Description" required></textarea>
+            <label for="tiny-editor">Province Description:</label>
+                <textarea name="description" class="form-control" rows="5" id="tiny-editor">Enter Province Description Here...!!!</textarea>
             </div>
             <button type="submit" class="btn btn-primary btn-block" name="province-submit">Submit</button>
             </form>
