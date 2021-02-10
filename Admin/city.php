@@ -14,10 +14,10 @@
     <section class="content-header">
       <h1>
         Dashboard
-        <small>Admin User</small>
+        <small>City</small>
       </h1>
       <ol class="breadcrumb">
-        <li><a href="admin-user.php"><i class="fa fa-dashboard"></i> Admin User</a></li>
+        <li><a href="city.php"><i class="fa fa-dashboard"></i> City</a></li>
         <li class="active">Dashboard</li>
       </ol>
     </section>
@@ -27,7 +27,7 @@
     <!-- =========================================================== -->
       <div class="row">
         <div class="col-md-12">
-            <h4><a href="province-add.php" type="button" class="btn btn-info fa fa-plus"> Add New Province</a></h4>
+            <h4><a href="city-add.php" type="button" class="btn btn-info fa fa-plus"> Add New City</a></h4>
         </div>  
       </div>
       <div class="row">
@@ -36,27 +36,28 @@
                 <thead>
                 <tr>
                     <th><h3>No.</h3></th>
-                    <th><h3>Province</h3></th>
+                    <th><h3>City</h3></th>
                     <th><h3>Location</h3></th>
                     <th><h3>Description</h3></th>
-                    <!-- <th><h3>Username</h3></th>
-                    <th><h3>Position</h3></th> -->
+                    <th><h3>Province</h3></th>
+                    <!-- <th><h3>Position</h3></th> --> 
                       <!-- <th>Details</th> -->
                   </tr>
                 </thead>
                 <tbody>
                   <?php 
-                      $admin_user = 'SELECT * FROM `province`';
-                      $result = mysqli_query($db, $admin_user) or die (mysqli_error($db));
+                      $city = 'SELECT a.*,b.province_name FROM `city` a INNER JOIN `province` b ON a.province_id = b.province_id';
+                      
+                      $result = mysqli_query($db, $city) or die (mysqli_error($db));
                       while ($row = mysqli_fetch_assoc($result)) {
                       echo '<tr>';
-                      echo '<td>'. $row['province_id'].'</td>';
+                      echo '<td>'. $row['city_id'].'</td>';
+                      echo '<td>'. $row['city_name'].'</td>';
+                      echo '<td>'. $row['city_location'].'</td>';
+                      echo '<td>'. $row['city_description'].'</td>';
                       echo '<td>'. $row['province_name'].'</td>';
-                      echo '<td>'. $row['location'].'</td>';
-                      echo '<td>'. $row['description'].'</td>';
-                    //   echo '<td>'. $row['username'].'</td>';
-                    //   echo '<td>'. $row['position'].'</td>';
-                   // echo '<td><a  type="button" class="btn btn-lg btn-warning fas fa-user-tag" href="admindetail.php?action=view & id='.$row['admin_id'] . '"></a></td>';    
+                      // echo '<td>'. $row['position'].'</td>';
+                      // echo '<td><a  type="button" class="btn btn-lg btn-warning fas fa-user-tag" href="admindetail.php?action=view & id='.$row['admin_id'] . '"></a></td>';    
                       echo '</tr>';
                     }
                   ?>
