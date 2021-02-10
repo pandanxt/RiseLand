@@ -115,15 +115,28 @@
                 <div role="presentation" class="dropdown space-nav"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Developments</b></a>
                   <div id="products-menu" class="dropdown-menu clearfix row" role="menu" >
                     <div class="column">
-                        <li class="dropdown-header"><b>Latest Developments</b></li>  
-                          <li class="dropdown-text"><a href="dp-lahore.php" style="text-decoration: none;">Development In Lahore</a></li>
-                          <li class="dropdown-text"><a href="dp-karachi.php" style="text-decoration: none;">Development In Karachi</a></li>
+                        <li class="dropdown-header"><b>Latest Developments</b></li> 
+                        <?php 
+                         $development = 'SELECT `city_id`,`city_name` FROM `city`';
+                         $result = mysqli_query($db, $development) or die (mysqli_error($db));
+                        //  if($result){
+                             while ($row = mysqli_fetch_array($result)) {
+                              $id = $row['city_id'];  
+                              $name = $row['city_name'];
+                        //  }
+                         
+                          echo '<li class="dropdown-text"><a href="city.php?action='.$id.'" style="text-decoration: none;">Development In '.$name.'</a></li>';
+                        ?>  
+                          <!-- <li class="dropdown-text"><a href="dp-karachi.php" style="text-decoration: none;">Development In Karachi</a></li>
                           <li class="dropdown-text"><a href="dp-islamabad.php" style="text-decoration: none;">Development In Islamabad</a></li>
                           <li class="dropdown-text"><a href="dp-faisalabad.php" style="text-decoration: none;">Development In Faisalabad</a></li>
                           <li class="dropdown-text"><a href="dp-sialkot.php" style="text-decoration: none;">Development In Sialkot</a></li>
                           <li class="dropdown-text"><a href="dp-multan.php" style="text-decoration: none;">Development In Multan</a></li>
                           <li class="dropdown-text"><a href="dp-murree.php" style="text-decoration: none;">Development In Murree</a></li>
-                          <li class="dropdown-text"><a href="dp-hyderabad.php" style="text-decoration: none;">Development In Hyderabad</a></li>
+                          <li class="dropdown-text"><a href="dp-hyderabad.php" style="text-decoration: none;">Development In Hyderabad</a></li> -->
+                        <?php
+                          } 
+                        ?>
                     </div>
                   </div>
                 </div>

@@ -1,4 +1,4 @@
-<!--Header File Include-->
+<!--Connection File Include-->
 <?php include('include/conn.php'); ?>
 <!--Header File Include-->
 <?php include('include/header.php'); ?>
