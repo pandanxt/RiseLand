@@ -31,7 +31,7 @@
       <ul class="sidebar-menu" data-widget="tree">
         <!-- Optionally, you can add icons to the links -->
         <li class="active"><a href="#"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
-        <li class="treeview">
+        <!-- <li class="treeview">
           <a href="#"><i class="fa fa-paper-plane-o"></i> <span>Posts</span>
             <span class="pull-right-container">
                 <i class="fa fa-angle-left pull-right"></i>
@@ -40,6 +40,17 @@
           <ul class="treeview-menu">
             <li><a href="#">Link in level 2</a></li>
             <li><a href="#">Link in level 2</a></li>
+          </ul>
+        </li> -->
+        <li class="treeview">
+          <a href="#"><i class="fa fa-paper-plane-o"></i> <span>Posts</span>
+            <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="news.php">Rise Land News</a></li>
+            <li><a href="news-type.php">News Type</a></li>
           </ul>
         </li>
         <li><a href="admin-user.php"><i class="fa fa-users"></i> <span>Admin User</span></a></li>

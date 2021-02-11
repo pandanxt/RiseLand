@@ -3,9 +3,8 @@
 require 'conn.php';
 
 $name = $_POST['name'];
-$location =  $_POST['location'];
 $description = $_POST['description'];
-$cityprovince = $_POST['cityprovince'];
+$location =  $_POST['location'];
 
 if (isset($_POST['province-submit'])) {
 
@@ -45,9 +44,10 @@ if (isset($_POST['province-submit'])) {
 	mysqli_stmt_close($stmt);
 	mysqli_close($db);
 }else if (isset($_POST['city-submit'])) {
+	$cityprovince = $_POST['cityprovince'];
 
 	if (empty($name)||empty($location)||empty($description)||empty($cityprovince)) {
-		header("Location: ../province-add.php?error=emptyfields&name=".$name."&location=".$location."&description=".$description."&cityprovince=".$cityprovince);
+		header("Location: ../city-add.php?error=emptyfields&name=".$name."&location=".$location."&description=".$description."&cityprovince=".$cityprovince);
 		exit();
 	}else{
 		$sql = "SELECT * FROM `city` WHERE `city_name`= ?";
