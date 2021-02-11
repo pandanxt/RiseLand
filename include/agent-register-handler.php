@@ -21,6 +21,7 @@ if (isset($_POST['agent-signup'])) {
     $companyfile = $_FILES["companyfile"]["name"]; 
     $tempnameCompany = $_FILES["companyfile"]["tmp_name"];     
     $folderCompany = "../img/".$companyfile; 
+    $status = "Pakistan Agent";
     // $alerts = $_POST['alertsms'];
 
     if (empty($name)||empty($email)||empty($password)||empty($passwordConfirm)||empty($cell)||empty($country)||empty($address)||empty($citydeal)||empty($agencyname)||empty($service)||empty($companycell)||empty($companyaddress)||empty($companyfile)) {
@@ -56,14 +57,14 @@ if (isset($_POST['agent-signup'])) {
                 header("Location: ../agent-register.php?error=celltaken&error=emailtaken");
                 exit();
             }elseif(move_uploaded_file($tempname, $folder) && move_uploaded_file($tempnameCompany, $folderCompany)){
-                $sql = "INSERT INTO `signup_as_agent`(`agent_name`, `agent_email`, `agent_password`, `agent_phone`, `agent_address`, `agent_zipcode`, `agent_image`, `agent_country`, `agent_city_deal`, `agent_agency_name`, `agent_services`, `agent_company_phone`, `agent_company_address`, `agent_company_logo`)VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+                $sql = "INSERT INTO `signup_as_agent`(`agent_name`, `agent_email`, `agent_password`, `agent_phone`, `agent_address`, `agent_zipcode`, `agent_image`, `agent_country`, `agent_city_deal`, `agent_agency_name`, `agent_services`, `agent_company_phone`, `agent_company_address`, `agent_company_logo`, `status`)VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
                 mysqli_stmt_execute($stmt);
                 if (!mysqli_stmt_prepare($stmt,$sql)) {
                     header("Location: ../agent-register.php?error=sqlerror&DataIsNotComplete");
                     exit();
                 }else{
                     $hashedPwd =password_hash($password,PASSWORD_DEFAULT);
-                    mysqli_stmt_bind_param($stmt,"ssssssssssssss",$name, $email,  $hashedPwd, $cell, $address, $zip, $filename, $country, $citydeal, $agencyname, $service, $companycell, $companyaddress, $companyfile);
+                    mysqli_stmt_bind_param($stmt,"sssssssssssssss",$name, $email,  $hashedPwd, $cell, $address, $zip, $filename, $country, $citydeal, $agencyname, $service, $companycell, $companyaddress, $companyfile, $status);
                     mysqli_stmt_execute($stmt);
                 ?>
                 <script type="text/javascript">
@@ -74,7 +75,7 @@ if (isset($_POST['agent-signup'])) {
                 exit();
                 }
             }elseif(move_uploaded_file($tempnameCompany, $folderCompany)){
-                $sql = "INSERT INTO `signup_as_agent`(`agent_name`, `agent_email`, `agent_password`, `agent_phone`, `agent_address`, `agent_zipcode`, `agent_image`, `agent_country`, `agent_city_deal`, `agent_agency_name`, `agent_services`, `agent_company_phone`, `agent_company_address`, `agent_company_logo`)VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+                $sql = "INSERT INTO `signup_as_agent`(`agent_name`, `agent_email`, `agent_password`, `agent_phone`, `agent_address`, `agent_zipcode`, `agent_image`, `agent_country`, `agent_city_deal`, `agent_agency_name`, `agent_services`, `agent_company_phone`, `agent_company_address`, `agent_company_logo`, `status`)VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
                 mysqli_stmt_execute($stmt);
                 if (!mysqli_stmt_prepare($stmt,$sql)) {
                     header("Location: ../agent-register.php?error=sqlerror&DataIsNotComplete");
@@ -82,7 +83,7 @@ if (isset($_POST['agent-signup'])) {
                 }else{
                     $hashedPwd =password_hash($password,PASSWORD_DEFAULT);
                     $image = 'img/no.jpg';
-                    mysqli_stmt_bind_param($stmt,"ssssssssssssss",$name, $email,  $hashedPwd, $cell, $address, $zip, $image, $country, $citydeal, $agencyname, $service, $companycell, $companyaddress, $companyfile);
+                    mysqli_stmt_bind_param($stmt,"sssssssssssssss",$name, $email,  $hashedPwd, $cell, $address, $zip, $image, $country, $citydeal, $agencyname, $service, $companycell, $companyaddress, $companyfile, $status);
                     mysqli_stmt_execute($stmt);
                 ?>
                 <script type="text/javascript">
@@ -93,7 +94,7 @@ if (isset($_POST['agent-signup'])) {
                 exit();
                 }
             }else{
-                $sql = "INSERT INTO `signup_as_agent`(`agent_name`, `agent_email`, `agent_password`, `agent_phone`, `agent_address`, `agent_zipcode`, `agent_image`, `agent_country`, `agent_city_deal`, `agent_agency_name`, `agent_services`, `agent_company_phone`, `agent_company_address`, `agent_company_logo`)VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+                $sql = "INSERT INTO `signup_as_agent`(`agent_name`, `agent_email`, `agent_password`, `agent_phone`, `agent_address`, `agent_zipcode`, `agent_image`, `agent_country`, `agent_city_deal`, `agent_agency_name`, `agent_services`, `agent_company_phone`, `agent_company_address`, `agent_company_logo`, `status`)VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
                 mysqli_stmt_execute($stmt);
                 if (!mysqli_stmt_prepare($stmt,$sql)) {
                     header("Location: ../agent-register.php?error=sqlerror&DataIsNotCompleteWithoutImage");
@@ -101,7 +102,7 @@ if (isset($_POST['agent-signup'])) {
                 }else{
                     $hashedPwd =password_hash($password,PASSWORD_DEFAULT);
                     $image = 'img/no.jpg';
-                    mysqli_stmt_bind_param($stmt,"ssssssssssssss",$name, $email,  $hashedPwd, $cell, $address, $zip, $image, $country, $citydeal, $agencyname, $service, $companycell, $companyaddress, $companyfile);
+                    mysqli_stmt_bind_param($stmt,"sssssssssssssss",$name, $email,  $hashedPwd, $cell, $address, $zip, $image, $country, $citydeal, $agencyname, $service, $companycell, $companyaddress, $companyfile, $status);
                     mysqli_stmt_execute($stmt);
                 ?>
                 <script type="text/javascript">
