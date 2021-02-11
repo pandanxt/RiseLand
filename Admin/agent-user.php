@@ -54,8 +54,14 @@
                 </thead>
                 <tbody>
                   <?php 
-                      $admin_user = 'SELECT * FROM `signup_as_agent`';
-                      $result = mysqli_query($db, $admin_user) or die (mysqli_error($db));
+                    $agent = (isset($_GET['action']) ? $_GET['action'] : ''); 
+                    if($agent == "fa"){
+                      $agent_user = 'SELECT * FROM `signup_as_agent` WHERE `status` = "Feature Agent"';
+                      $result = mysqli_query($db, $agent_user) or die (mysqli_error($db));
+                    }elseif($agent == "pa"){
+                      $agent_user = 'SELECT * FROM `signup_as_agent` WHERE `status` = "Pakistan Agent"';
+                      $result = mysqli_query($db, $agent_user) or die (mysqli_error($db));
+                    }
                       while ($row = mysqli_fetch_assoc($result)) {
                       echo '<tr>';
                       echo '<td>'. $row['agent_id'].'</td>';

@@ -43,19 +43,20 @@
           </ul>
         </li>
         <li><a href="admin-user.php"><i class="fa fa-users"></i> <span>Admin User</span></a></li>
+        <li><a href="simple-user.php"><i class="fa fa-users"></i> <span>Website User</span></a></li>
         <li><a href="province.php"><i class="fa fa-map"></i> <span>Province</span></a></li>
         <li><a href="city.php"><i class="fa fa-map"></i> <span>City</span></a></li>
         <li><a href="#"><i class="fa fa-clone"></i> <span>Categories</span></a></li>
         <li><a href="#"><i class="fa fa-comment-o"></i> <span>Comments</span></a></li>
         <li class="treeview">
-          <a href="#"><i class="fa fa-users"></i> <span>Users</span>
+          <a href="#"><i class="fa fa-users"></i> <span>Agents</span>
             <span class="pull-right-container">
                 <i class="fa fa-angle-left pull-right"></i>
               </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="simple-user.php">Simple Users</a></li>
-            <li><a href="agent-user.php">Agent Users</a></li>
+            <li><a href="agent-user.php?action=fa">Feature Agent</a></li>
+            <li><a href="agent-user.php?action=pa">Pakistan Agent</a></li>
           </ul>
         </li>
         <li><a href="#"><i class="fa fa-user"></i> <span>Profile</span></a></li>

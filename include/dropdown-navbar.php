@@ -105,8 +105,8 @@
                   <div id="products-menu" class="dropdown-menu clearfix row" role="menu" >
                     <div class="column">
                         <li class="dropdown-header"><b>Agents</b></li>  
-                        <li class="dropdown-text"><a href="#" style="text-decoration: none;">Featured Agents</a></li>
-                          <li class="dropdown-text"><a href="#" style="text-decoration: none;">Recent Agents</a></li>
+                        <li class="dropdown-text"><a href="agent.php?action=fa" style="text-decoration: none;">Featured Agents</a></li>
+                          <li class="dropdown-text"><a href="agent.php?action=pa" style="text-decoration: none;">Recent Agents</a></li>
                     </div>
                   </div>
                 </div>
