@@ -28,7 +28,7 @@ else{
       }
       elseif ($pwdCheck == true) {
         session_start();
-        $_SESSION['userid'] = $row['admin_id'];
+        $_SESSION['adminid'] = $row['admin_id'];
         $_SESSION['useruid'] = $row['username'];
         $_SESSION['email'] = $row['email'];
         $_SESSION['fname'] = $row['fname'];
