@@ -38,8 +38,8 @@
             </div>
             <div class="form-group">
                 <label for="newstype">News Type:</label>
-                <select id="newstype" name="type" class="form-control">
-                  <option disabled selected>-- Select Type --</option>
+                <select id="newstype" name="type" class="form-control" required>
+                  <!-- <option disabled selected>-- Select Type --</option> -->
                 <?php
                     $type = 'SELECT * FROM `news_type`';
                     $result = mysqli_query($db, $type) or die (mysqli_error($db));

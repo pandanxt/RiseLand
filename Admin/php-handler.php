@@ -50,7 +50,7 @@ if (isset($_POST['news-submit'])) {
 				header("Location: news-add.php?error=sqlerror");
 				exit();
 				}else{
-				$image = 'img/no.jpg';
+				$image = 'img/NewsImage_thumb.jpg';
 				mysqli_stmt_bind_param($stmt,"ssssss",$name,$description,$type,$image,$postOn,$postBy);
 				mysqli_stmt_execute($stmt);
 				
