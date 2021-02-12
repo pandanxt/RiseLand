@@ -37,6 +37,7 @@
                 <tr>
                     <th><h3>No.</h3></th>
                     <th><h3>Title</h3></th>
+                    <th><h3>Image</h3></th>
                     <th><h3>Type</h3></th>
                     <th><h3>Description</h3></th>
                     <th><h3>Date/Time</h3></th>
@@ -46,16 +47,17 @@
                 </thead>
                 <tbody>
                   <?php 
-                      $news = 'SELECT * FROM `news`';
+                      $news = 'SELECT * FROM news a INNER JOIN news_type b INNER JOIN tbladmin c WHERE a.news_type = b.news_type_id AND a.news_post_by = c.admin_id';
                       $result = mysqli_query($db, $news) or die (mysqli_error($db));
                       while ($row = mysqli_fetch_assoc($result)) {
                       echo '<tr>';
                       echo '<td>'. $row['news_id'].'</td>';
                       echo '<td>'. $row['news_name'].'</td>';
-                      echo '<td>'. $row['news_type'].'</td>';
+                      echo '<td><img style="width:50px;height:50px;" class="img-responsive" src="../img/'.$row['news_image'].'"/></td>';
+                      echo '<td>'. $row['news_type_name'].'</td>';
                       echo '<td>'. $row['news_description'].'</td>';
                       echo '<td>'. $row['news_post_on'].'</td>';
-                      echo '<td>'. $row['news_post_by'].'</td>';
+                      echo '<td>'. $row['username'].'</td>';
                    // echo '<td><a  type="button" class="btn btn-lg btn-warning fas fa-user-tag" href="admindetail.php?action=view & id='.$row['admin_id'] . '"></a></td>';    
                       echo '</tr>';
                     }

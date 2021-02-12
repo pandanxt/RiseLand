@@ -54,7 +54,44 @@ if (isset($_POST['news-submit'])) {
 				mysqli_stmt_bind_param($stmt,"ssssss",$name,$description,$type,$image,$postOn,$postBy);
 				mysqli_stmt_execute($stmt);
 				
-				//echo '<script type="text/javascript">alert("New City is Successfully Added");window.location = "../news.php";</script>';								
+				echo '<script type="text/javascript">alert("New City is Successfully Added");window.location = "../news.php";</script>';								
+				exit();
+				}
+			}
+		}			
+	}
+mysqli_stmt_close($stmt);
+mysqli_close($db);
+}elseif (isset($_POST['news-type-submit'])) {
+	
+	if (empty($name)) {
+		header("Location: news-type-add.php?error=emptyfields&name=".$name);
+		exit();
+	}else{
+		$sql = "SELECT * FROM `news_type` WHERE `news_type_name` = ?";
+		$stmt = mysqli_stmt_init($db);
+		if (!mysqli_stmt_prepare($stmt,$sql)) {
+			header("Location: news-type-add.php?error=sqlerror");
+			exit();
+		}else{
+			mysqli_stmt_bind_param($stmt,"s",$name);
+			mysqli_stmt_execute($stmt);
+			mysqli_stmt_store_result($stmt);
+			$resultCheck = mysqli_stmt_num_rows($stmt);
+			if ($resultCheck > 0) {
+				header("Location: news-type-add.php?error=newsTypeNameAlreadyPost");
+				exit();
+			}else{
+				$sql = "INSERT INTO `news_type`(`news_type_name`) VALUES (?)";
+				mysqli_stmt_execute($stmt);
+				if (!mysqli_stmt_prepare($stmt,$sql)) {
+				header("Location: news-type-add.php?error=sqlerror");
+				exit();
+				}else{
+				mysqli_stmt_bind_param($stmt,"s",$name);
+				mysqli_stmt_execute($stmt);
+				
+				echo '<script type="text/javascript">alert("New City Type is Successfully Added");window.location = "news-type.php";</script>';								
 				exit();
 				}
 			}
