@@ -8,6 +8,7 @@
     <link href="bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css" />
     <link href="bootstrap/css/bootstrap-theme.css" rel="stylesheet" type="text/css" />
     <link href="bootstrap/css/custom-style.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tiny.cloud/1/6l8pi0wz9amts9zxdlf1pg5gpka75ghjbov0fmv46n3uyga6/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
     <script src="bootstrap/js/jquery.js"></script>
     <style>
         body {

@@ -50,6 +50,14 @@
         </div>
       </footer>
       <section style="text-align:center; margin:10px auto;"><p>Powered by <a href="#"  style="color:#fdc222;">Mobeen Shah</a></p></section>
+      <!-- REQUIRED JS SCRIPTS -->
+      <script>
+          tinymce.init({
+            selector: 'textarea',
+            plugins: 'advlist autolink lists link image charmap print preview hr anchor pagebreak',
+            toolbar_mode: 'floating',
+        });
+      </script>
       <script src="bootstrap/js/bootstrap.js"></script>
       <script src="bootstrap/js/custom-javascript.js"></script>
     </body>
