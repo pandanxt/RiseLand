@@ -45,35 +45,59 @@
               <div class="col-md-12" style="border-radius: 5px; background-color:#e7e7e7;padding:5px;">
                     <form action="include/php-handler.php" method="post" enctype="multipart/form-data">
                         <div class="form-group">
-                            <input type="hidden" name="admin" value="<?php //echo $_SESSION["adminid"];?>">
+                            <input type="hidden" name="agent" value="<?php echo $_SESSION['agentid'];?>">
+                            <input type="hidden" name="plottype" value="<?php echo $proId;?>">
+                            <input type="hidden" name="status" value="Available">
                         </div>
                         <div class="form-group">
-                            <label for="newsname">News Name:</label>
-                            <input type="text" id="newsname" name="name" class="form-control" placeholder="Enter News name" autofocus="autofocus" required>
+                            <label for="propertyname">Property Name:</label>
+                            <input type="text" id="propertyname" name="name" class="form-control" placeholder="Enter Property Name" autofocus="autofocus" required>
                         </div>
                         <div class="form-group">
-                            <label for="newstype">News Type:</label>
-                            <select id="newstype" name="type" class="form-control" required>
+                            <label for="propertyaddress">Property Address:</label>
+                            <input type="text" id="propertyaddress" name="location" class="form-control" placeholder="Enter Property Location" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="propertytype">Property Type:</label>
+                            <!-- <input type="text" id="propertyname" name="name" class="form-control" placeholder="Enter News name" required> -->
+                            <select id="propertytype" name="propertytype" class="form-control" required>
+                            <option disabled selected>Select Property Type</option>
+                            <option value="house">House</option>
+                            <option value="plot">Land/Plot</option>
+                            <option value="flat">Flat/Apartment</option>
+                            <option value="office">Office</option>
+                            <option value="building">Building</option>
+                            <option value="farmhouse">Farmhouse</option>
+                            <option value="warehouse">Warehouse</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="propertyprice">Property Price:</label>
+                            <input type="text" id="propertyprice" name="price" class="form-control" placeholder="Enter Property Price" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="newstype">Society Of Property:</label>
+                            <select id="newstype" name="society" class="form-control" required>
                             <?php
-                            //     $type = 'SELECT * FROM `news_type`';
-                            //     $result = mysqli_query($db, $type) or die (mysqli_error($db));
-                            //       while ($row = mysqli_fetch_array($result)) {
-                            //         $id = $row['news_type_id'];  
-                            //         $name = $row['news_type_name'];
-                            //         echo '<option value="'.$id.'">'.$name.'</option>'; 
-                            //   }
+                                $type = 'SELECT `society_id`,`society_name` FROM `society`';
+                                $result = mysqli_query($db, $type) or die (mysqli_error($db));
+                                  while ($row = mysqli_fetch_array($result)) {
+                                    $id = $row['society_id'];  
+                                    $name = $row['society_name'];
+                                    echo '<option value="'.$id.'">'.$name.'</option>'; 
+                              }
                             ?>    
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="file" class="form-label">News Image:</label>
+                            <label for="file" class="form-label">Property Image:</label>
                             <input type="file" class="form-control" id="file" name="file" />
                         </div>
                         <div class="form-group">
-                            <label for="tiny-editor">News Description:</label>
+                            <label for="tiny-editor">Property Description:</label>
                             <textarea name="description" class="form-control" rows="5" id="tiny-editor">Enter News Description Here...!!!</textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary btn-block" name="news-submit">Submit</button>
+                        <button type="submit" class="btn btn-primary btn-block" name="property-submit">Submit</button>
                     </form>
               </div>
             </div>

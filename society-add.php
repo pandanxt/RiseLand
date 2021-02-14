@@ -23,7 +23,7 @@
       <?php include('include/search-box.php'); ?>      
     </div><!--/col-md-4-->
     <?php 
-          $proId = (isset($_GET['action']) ? $_GET['action'] : ''); 
+          // $proId = (isset($_GET['action']) ? $_GET['action'] : ''); 
         //   $province = "SELECT * FROM `province` WHERE `province_id` =".$proId;
         //   $result = mysqli_query($db, $province) or die (mysqli_error($db));
         //   if($result){
@@ -37,7 +37,7 @@
     <!--SignUp-box Land-->
     <div class="panel panel-primary col-md-8" style="padding: 0px;margin-top: 10px; float: right;">
       <div class="panel-heading">
-        <?php echo'<h3 class="panel-title">'.$proId.'</h3>';?>
+        <?php echo'<h3 class="panel-title">Add New Society</h3>';?>
       </div>
       <div class="panel-body" style="border: 1px solid #337ab7; margin: 5px; border-radius: 5px;">
         <div class="col-md-12" style="margin:0px;padding:0px;">
