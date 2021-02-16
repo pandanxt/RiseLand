@@ -22,10 +22,13 @@
       <!--Search Box-->
       <?php include('include/search-box.php'); ?>      
     </div><!--/col-md-4-->
+    <?php 
+          $proId = (isset($_GET['action']) ? $_GET['action'] : ''); 
+    ?>
     <!--SignUp-box Land-->
     <div class="panel panel-primary col-md-8" style="padding: 0px;margin-top: 10px; float: right;">
       <div class="panel-heading">
-        <?php echo'<h3 class="panel-title">Add New Society</h3>';?>
+        <?php echo'<h3 class="panel-title">Ask On Forum</h3>';?>
       </div>
       <div class="panel-body" style="border: 1px solid #337ab7; margin: 5px; border-radius: 5px;">
         <div class="col-md-12" style="margin:0px;padding:0px;">
@@ -34,37 +37,16 @@
                     <form action="include/php-handler.php" method="post" enctype="multipart/form-data">
                         <div class="form-group">
                             <input type="hidden" name="agent" value="<?php echo $_SESSION['agentid'];?>">
-                            <input type="hidden" name="status" value="Pending">
+                            <input type="hidden" name="forumtype" value="<?php echo $proId;?>">
+                            <input type="hidden" name="status" value="Online">
                         </div>
                         <div class="form-group">
-                            <label for="societyname">Society Name:</label>
-                            <input type="text" id="societyname" name="name" class="form-control" placeholder="Enter Society Name" autofocus="autofocus" required>
+                            <label for="propertyname">Forum Title:</label>
+                            <input type="text" id="propertyname" name="name" class="form-control" placeholder="Enter Title (Maximum one Line)." autofocus="autofocus" required>
                         </div>
                         <div class="form-group">
-                            <label for="societyaddress">Society Location:</label>
-                            <input type="text" id="societyaddress" name="location" class="form-control" placeholder="Enter Society Location" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="newstype">City Of Society:</label>
-                            <select id="newstype" name="city" class="form-control" required>
-                            <?php
-                                $type = 'SELECT `city_id`,`city_name` FROM `city`';
-                                $result = mysqli_query($db, $type) or die (mysqli_error($db));
-                                  while ($row = mysqli_fetch_array($result)) {
-                                    $id = $row['city_id'];  
-                                    $name = $row['city_name'];
-                                    echo '<option value="'.$id.'">'.$name.'</option>'; 
-                              }
-                            ?>    
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="file" class="form-label">Society Image:</label>
-                            <input type="file" class="form-control" id="file" name="file" />
-                        </div>
-                        <div class="form-group">
-                            <label for="tiny-editor">Society Description:</label>
-                            <textarea name="description" class="form-control" rows="5" id="tiny-editor">Enter Society Description Here...!!!</textarea>
+                            <label for="tiny-editor">Forum Description:</label>
+                            <textarea name="description" class="form-control" rows="5" id="tiny-editor">Enter Complete Description Here...!!!</textarea>
                         </div>
                         <button type="submit" class="btn btn-primary btn-block" name="property-submit">Submit</button>
                     </form>
