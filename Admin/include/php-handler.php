@@ -60,21 +60,21 @@ if (isset($_POST['province-submit'])) {
 			mysqli_stmt_execute($stmt);
 			mysqli_stmt_store_result($stmt);
 			$resultCheck = mysqli_stmt_num_rows($stmt);
-			if ($resultCheck > 0) {
-				header("Location: ../city-add.php?error=cityNameAlreadyTaken");
-				exit();
-			}else{
-				$sql = "INSERT INTO `city`(`city_name`, `city_location`, `city_description`, `province_id`) VALUES (?,?,?,?)";
-				mysqli_stmt_execute($stmt);
-				if (!mysqli_stmt_prepare($stmt,$sql)) {
-				header("Location: ../city-add.php?error=sqlerror");
-				exit();
-			}else{
-				mysqli_stmt_bind_param($stmt,"ssss",$name,$location,$description,$cityprovince);
-				mysqli_stmt_execute($stmt);
-				
-				echo '<script type="text/javascript">alert("New City is Successfully Added");window.location = "../city.php";</script>';								
-				exit();
+				if ($resultCheck > 0) {
+					header("Location: ../city-add.php?error=cityNameAlreadyTaken");
+					exit();
+				}else{
+					$sql = "INSERT INTO `city`(`city_name`, `city_location`, `city_description`, `province_id`) VALUES (?,?,?,?)";
+					mysqli_stmt_execute($stmt);
+					if (!mysqli_stmt_prepare($stmt,$sql)) {
+					header("Location: ../city-add.php?error=sqlerror");
+					exit();
+				}else{
+					mysqli_stmt_bind_param($stmt,"ssss",$name,$location,$description,$cityprovince);
+					mysqli_stmt_execute($stmt);
+					
+					echo '<script type="text/javascript">alert("New City is Successfully Added");window.location = "../city.php";</script>';								
+					exit();
 				}
 			}
 		}			

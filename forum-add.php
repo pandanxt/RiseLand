@@ -37,7 +37,7 @@
                     <form action="include/php-handler.php" method="post" enctype="multipart/form-data">
                         <div class="form-group">
                             <input type="hidden" name="agent" value="<?php echo $_SESSION['agentid'];?>">
-                            <input type="hidden" name="forumtype" value="<?php echo $proId;?>">
+                            <input type="hidden" name="type" value="<?php echo $proId;?>">
                             <input type="hidden" name="status" value="Online">
                         </div>
                         <div class="form-group">

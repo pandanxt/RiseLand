@@ -50,7 +50,7 @@
                         </div>
                         <div class="form-group">
                             <label for="propertytype">Property Type:</label>
-                            <select id="propertytype" name="propertytype" class="form-control" required>
+                            <select id="propertytype" name="type" class="form-control" required>
                             <option disabled selected>Select Property Type</option>
                             <option value="house">House</option>
                             <option value="plot">Land/Plot</option>
@@ -63,7 +63,7 @@
                         </div>
                         <div class="form-group">
                             <label for="propertyprice">Property Price:</label>
-                            <input type="text" id="propertyprice" name="price" class="form-control" placeholder="Enter Property Price" required>
+                            <input type="number" id="propertyprice" name="price" class="form-control" placeholder="Enter Property Price" required>
                         </div>
                         <div class="form-group">
                             <label for="newstype">Society Of Property:</label>
