@@ -66,7 +66,7 @@
                             <label for="tiny-editor">Society Description:</label>
                             <textarea name="description" class="form-control" rows="5" id="tiny-editor">Enter Society Description Here...!!!</textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary btn-block" name="property-submit">Submit</button>
+                        <button type="submit" class="btn btn-primary btn-block" name="society-submit">Submit</button>
                     </form>
               </div>
             </div>

@@ -48,7 +48,7 @@
                             <label for="tiny-editor">Forum Description:</label>
                             <textarea name="description" class="form-control" rows="5" id="tiny-editor">Enter Complete Description Here...!!!</textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary btn-block" name="property-submit">Submit</button>
+                        <button type="submit" class="btn btn-primary btn-block" name="forum-submit">Submit</button>
                     </form>
               </div>
             </div>
