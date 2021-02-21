@@ -135,6 +135,8 @@ if (isset($_POST['property-submit'])) {
 }elseif (isset($_POST['forum-submit'])) {
 
 	$forumtype =  $_POST['type'];
+	
+	//echo '<script> console.log('.$forumtype.' '.$name.' '.$description.' '.$status.' '.$postOn.' '.$postBy.');</script>';
 
 	if (empty($name)||empty($description)) {
 		header("Location: ../forum-add.php?error=emptyfields&forumtitle=".$name."&description=".$description);
@@ -156,17 +158,17 @@ if (isset($_POST['property-submit'])) {
 					header("Location: ../forum-add.php?error=forumTitleAlreadyTaken");
 					exit();
 				}else{
-						$sql = "INSERT INTO `forum`(`forum_title`, `forum_type`, `forum_status`, `forum_description`, `posted_on`, `post_by`) VALUES (?,?,?,?,?,?)";
+						$sql = "INSERT INTO `forum`(`forum_title`, `forum_type`, `forum_status`, `forum_description`, `posted_on`, `agent_id`) VALUES (?,?,?,?,?,?)";
 						mysqli_stmt_execute($stmt);
 					
 						if (!mysqli_stmt_prepare($stmt,$sql)) {
 							header("Location: forum-add.php?error=sqlerror");
 							exit();
 						}else{
-							mysqli_stmt_bind_param($stmt,"ssssss",$name, $type, $status, $description, $postOn, $postBy);
+							mysqli_stmt_bind_param($stmt,"ssssss",$name, $forumtype, $status, $description, $postOn, $postBy);
 							mysqli_stmt_execute($stmt);
 						
-							// echo '<script type="text/javascript">alert("New Forum is Successfully Added");window.location = "../index.php";</script>';								
+							echo '<script type="text/javascript">alert("New Forum is Successfully Added");window.location = "../index.php";</script>';								
 							exit();
 						}			
 					}

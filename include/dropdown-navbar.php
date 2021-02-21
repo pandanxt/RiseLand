@@ -79,9 +79,9 @@
                   <div id="products-menu" class="dropdown-menu clearfix row" role="menu" >
                     <div class="column">
                         <li class="dropdown-header"><b>Rising Forums</b></li>  
-                        <li class="dropdown-text"><a href="#" style="text-decoration: none;">Buying Property</a></li>
-                          <li class="dropdown-text"><a href="#" style="text-decoration: none;">Daily File Rates</a></li>
-                          <li class="dropdown-text"><a href="#" style="text-decoration: none;">Selling Properties</a></li>
+                        <li class="dropdown-text"><a href="forum.php?action=buyingproperty" style="text-decoration: none;">Buying Property</a></li>
+                          <li class="dropdown-text"><a href="forum.php?action=dailyfilerate" style="text-decoration: none;">Daily File Rates</a></li>
+                          <li class="dropdown-text"><a href="forum.php?action=sellingproperty" style="text-decoration: none;">Selling Properties</a></li>
                     </div>
                   </div>
                 </div>
