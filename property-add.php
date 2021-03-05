@@ -85,7 +85,7 @@
                         </div>
                         <div class="form-group">
                             <label for="tiny-editor">Property Description:</label>
-                            <textarea name="description" class="form-control" rows="5" id="tiny-editor">Enter News Description Here...!!!</textarea>
+                            <textarea name="description" class="form-control" rows="5" id="textarea">Enter News Description Here...!!!</textarea>
                         </div>
                         <button type="submit" class="btn btn-primary btn-block" name="property-submit">Submit</button>
                     </form>

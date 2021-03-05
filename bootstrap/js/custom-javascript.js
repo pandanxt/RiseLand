@@ -18,3 +18,14 @@ $('.multi-item-carousel').carousel({
         $(this).siblings(':first').children(':first-child').clone().appendTo($(this));
     }
   });
+
+
+  $("#pwd").keyup(function(event) {
+    if (event.keyCode === 13) {
+        $("#myLogin").click();
+    }
+  });
+
+  // $("#myLogin").click(function() {
+  //   alert("Button code executed.");
+  // });

@@ -46,7 +46,7 @@
                         </div>
                         <div class="form-group">
                             <label for="tiny-editor">Forum Description:</label>
-                            <textarea name="description" class="form-control" rows="5" id="tiny-editor">Enter Complete Description Here...!!!</textarea>
+                            <textarea name="description" class="form-control" rows="5" id="textarea">Enter Complete Description Here...!!!</textarea>
                         </div>
                         <button type="submit" class="btn btn-primary btn-block" name="forum-submit">Submit</button>
                     </form>

@@ -59,8 +59,8 @@
                             </div>
                             <div class="form-group">        
                                 <div class="col-sm-12" style="padding: 0px 0px 5px 0px !important;">
-                                        <button type="submit" class="btn btn-primary">Create Account</button>
-                                        <button type="submit" class="btn btn-primary" name="login-agent">Login</button>
+                                        <a type="submit" class="btn btn-primary" href="agent-register.php">Create Account</a>
+                                        <button type="submit" class="btn btn-primary" name="login-agent" id="myLogin">Login</button>
                                 </div>
                             </div>
                             </form>
@@ -115,8 +115,8 @@
                                     </div>
                                     <div class="form-group">        
                                         <div class="col-sm-12" style="padding: 0px 0px 5px 0px !important;">
-                                                <button type="submit" class="btn btn-primary">Create Account</button>
-                                                <button type="submit" class="btn btn-primary" name="login-user">Login</button>
+                                                <a type="submit" class="btn btn-primary" href="user-register.php">Create Account</a>
+                                                <button type="submit" class="btn btn-primary" name="login-user" id="myLogin">Login</button>
                                         </div>
                                     </div>
                                     </form>
