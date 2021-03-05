@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 11, 2021 at 10:06 PM
+-- Generation Time: Mar 05, 2021 at 01:46 PM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 7.2.23
 
@@ -45,6 +45,50 @@ INSERT INTO `city` (`city_id`, `city_name`, `city_location`, `city_description`,
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `forum`
+--
+
+CREATE TABLE `forum` (
+  `forum_id` int(20) NOT NULL,
+  `forum_title` varchar(255) CHARACTER SET latin1 NOT NULL,
+  `forum_type_id` int(20) NOT NULL,
+  `forum_status` varchar(255) CHARACTER SET latin1 NOT NULL,
+  `forum_description` longtext NOT NULL,
+  `posted_on` datetime NOT NULL,
+  `agent_id` int(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `forum`
+--
+
+INSERT INTO `forum` (`forum_id`, `forum_title`, `forum_type_id`, `forum_status`, `forum_description`, `posted_on`, `agent_id`) VALUES
+(1, 'asdjhasjkdh', 3, 'Online', '<p>Enter Complete Description Here...!!!</p>', '2021-03-05 13:00:07', 1),
+(2, 'sjkadhasjkdsa', 3, 'Online', '<h1 style=\"text-align: center; padding-left: 40px;\"><em><strong>Enter Complete Description Here...!!!</strong></em></h1>\r\n<h1 style=\"text-align: center; padding-left: 40px;\"><em><strong>jsadjaskdjkassa</strong></em></h1>', '2021-03-05 13:00:47', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `forum_type`
+--
+
+CREATE TABLE `forum_type` (
+  `forum_type_id` int(20) NOT NULL,
+  `forum_type_name` varchar(255) CHARACTER SET latin1 NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `forum_type`
+--
+
+INSERT INTO `forum_type` (`forum_type_id`, `forum_type_name`) VALUES
+(1, 'Buying Property'),
+(2, 'Daily File Rates'),
+(3, 'Selling Properties');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `news`
 --
 
@@ -57,6 +101,14 @@ CREATE TABLE `news` (
   `news_post_on` datetime NOT NULL,
   `news_post_by` int(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `news`
+--
+
+INSERT INTO `news` (`news_id`, `news_name`, `news_description`, `news_type`, `news_image`, `news_post_on`, `news_post_by`) VALUES
+(1, 'Earth Quick in Pakistan Region', '<p style=\"text-align: center;\"><em>Enter News Description Here...!!!</em></p>', 2, 'Mubeen-profile.jpg', '2021-02-12 14:19:59', 1),
+(2, 'Top 5 Best Real Estate Investments In Gujranwala 2019', '<p dir=\"ltr\" style=\"box-sizing: border-box; margin: 0px; font-size: 13px; line-height: 20px; padding: 0px; color: #888888; font-family: \'Segoe UI\'; background-color: #f5f5f5;\">Major developers are focused on the residential market as high demand for more communities across the country continues to drive purchases, especially in the affordable housing sector. Previously only large cities were considered but now with the overall revolution of the real estate, a quality living and investment options are bright in all the cities of Pakistan.&nbsp;</p>\r\n<p style=\"box-sizing: border-box; margin: 0px; font-size: 13px; line-height: 20px; padding: 0px; color: #888888; font-family: \'Segoe UI\'; background-color: #f5f5f5;\"><span style=\"box-sizing: border-box; color: #333399;\"><span style=\"box-sizing: border-box; font-weight: bold;\"><a style=\"box-sizing: border-box; background: transparent; color: #5e5e5e; text-decoration-line: none; cursor: pointer; transition: color 0.1s linear 0s; -webkit-font-smoothing: antialiased;\" href=\"https://wall.pk/real-estate-investments-in-gujranwala-single-news-1848.aspx#master\"><span style=\"box-sizing: border-box; color: #333399;\">Master City Gujranwala</span></a></span></span></p>\r\n<p style=\"box-sizing: border-box; margin: 0px; font-size: 13px; line-height: 20px; padding: 0px; color: #888888; font-family: \'Segoe UI\'; background-color: #f5f5f5;\"><span style=\"box-sizing: border-box; color: #333399;\"><span style=\"box-sizing: border-box; font-weight: bold;\"><a style=\"box-sizing: border-box; background: transparent; color: #5e5e5e; text-decoration-line: none; cursor: pointer; transition: color 0.1s linear 0s; -webkit-font-smoothing: antialiased;\" href=\"https://wall.pk/real-estate-investments-in-gujranwala-single-news-1848.aspx#dha\"><span style=\"box-sizing: border-box; color: #333399;\">DHA Gujranwala</span></a></span></span></p>\r\n<p style=\"box-sizing: border-box; margin: 0px; font-size: 13px; line-height: 20px; padding: 0px; color: #888888; font-family: \'Segoe UI\'; background-color: #f5f5f5;\"><span style=\"box-sizing: border-box; color: #333399;\"><span style=\"box-sizing: border-box; font-weight: bold;\"><a style=\"box-sizing: border-box; background: transparent; color: #5e5e5e; text-decoration-line: none; cursor: pointer; transition: color 0.1s linear 0s; -webkit-font-smoothing: antialiased;\" href=\"https://wall.pk/real-estate-investments-in-gujranwala-single-news-1848.aspx#citi\"><span style=\"box-sizing: border-box; color: #333399;\">Citi Housing Gujranwala</span></a></span></span></p>\r\n<p style=\"box-sizing: border-box; margin: 0px; font-size: 13px; line-height: 20px; padding: 0px; color: #888888; font-family: \'Segoe UI\'; background-color: #f5f5f5;\"><span style=\"box-sizing: border-box; color: #333399;\"><span style=\"box-sizing: border-box; font-weight: bold;\"><a style=\"box-sizing: border-box; background: transparent; color: #5e5e5e; text-decoration-line: none; cursor: pointer; transition: color 0.1s linear 0s; -webkit-font-smoothing: antialiased;\" href=\"https://wall.pk/real-estate-investments-in-gujranwala-single-news-1848.aspx#royal\"><span style=\"box-sizing: border-box; color: #333399;\">Royal Palm City Gujranwala</span></a></span></span></p>\r\n<p style=\"box-sizing: border-box; margin: 0px; font-size: 13px; line-height: 20px; padding: 0px; color: #888888; font-family: \'Segoe UI\'; background-color: #f5f5f5;\"><span style=\"box-sizing: border-box; color: #333399;\"><span style=\"box-sizing: border-box; font-weight: bold;\"><a style=\"box-sizing: border-box; background: transparent; color: #5e5e5e; text-decoration-line: none; cursor: pointer; transition: color 0.1s linear 0s; -webkit-font-smoothing: antialiased;\" href=\"https://wall.pk/real-estate-investments-in-gujranwala-single-news-1848.aspx#university\"><span style=\"box-sizing: border-box; color: #333399;\">University Town Gujranwala</span></a></span></span></p>\r\n<p dir=\"ltr\" style=\"box-sizing: border-box; margin: 0px; font-size: 13px; line-height: 20px; padding: 0px; color: #888888; font-family: \'Segoe UI\'; background-color: #f5f5f5;\">Gujranwala is among those cities which are developing rapidly and remarkably in the real estate sector where I\'d say that aspiration, potential and strong expectations are major drawing forces of change. Yes, Gujranwala has become an attractive hub which holds great opportunities ripening gradually and offering high potential for modern investors. Because of the development status and thriving environment of this city with spirit and dynamics, you will find a gate towards the new possibilities in 2019.</p>', 1, 'NewsImage_thumb.jpg', '2021-02-12 15:20:14', 1);
 
 -- --------------------------------------------------------
 
@@ -74,7 +126,9 @@ CREATE TABLE `news_type` (
 --
 
 INSERT INTO `news_type` (`news_type_id`, `news_type_name`) VALUES
-(1, 'General News');
+(1, 'General News'),
+(2, 'Construction'),
+(3, 'Development');
 
 -- --------------------------------------------------------
 
@@ -100,14 +154,19 @@ CREATE TABLE `plots` (
 --
 
 CREATE TABLE `property` (
-  `Property_ID` int(10) NOT NULL,
-  `Property_Type` varchar(255) NOT NULL,
-  `Country_ID` int(10) NOT NULL,
-  `Society_ID` int(10) NOT NULL,
-  `Plot_House_ID` int(10) NOT NULL,
-  `Province_ID` int(10) NOT NULL,
-  `USER_ID` int(10) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `property_id` int(20) NOT NULL,
+  `property_name` varchar(255) NOT NULL,
+  `property_description` longtext NOT NULL,
+  `property_type` varchar(255) NOT NULL,
+  `property_plot` varchar(255) NOT NULL,
+  `property_location` varchar(255) NOT NULL,
+  `property_price` int(20) NOT NULL,
+  `property_posted_on` datetime NOT NULL,
+  `property_status` varchar(255) NOT NULL,
+  `property_image` longtext NOT NULL,
+  `agent_id` int(20) NOT NULL,
+  `society_id` int(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -223,13 +282,15 @@ INSERT INTO `signup_as_user` (`user_id`, `user_name`, `user_email`, `user_passwo
 --
 
 CREATE TABLE `society` (
-  `Society_ID` int(10) NOT NULL,
-  `Society_Name` varchar(255) NOT NULL,
-  `Location` varchar(255) NOT NULL,
-  `Descrption` varchar(255) NOT NULL,
-  `Latest_Developmrnt` varchar(255) NOT NULL,
-  `USER_ID` int(10) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `society_id` int(20) NOT NULL,
+  `society_name` varchar(255) NOT NULL,
+  `society_location` varchar(255) NOT NULL,
+  `society_descrption` longtext NOT NULL,
+  `society_image` longtext NOT NULL,
+  `society_status` varchar(255) NOT NULL,
+  `agent_id` int(20) NOT NULL,
+  `city_id` int(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -265,6 +326,18 @@ ALTER TABLE `city`
   ADD PRIMARY KEY (`city_id`);
 
 --
+-- Indexes for table `forum`
+--
+ALTER TABLE `forum`
+  ADD PRIMARY KEY (`forum_id`);
+
+--
+-- Indexes for table `forum_type`
+--
+ALTER TABLE `forum_type`
+  ADD PRIMARY KEY (`forum_type_id`);
+
+--
 -- Indexes for table `news`
 --
 ALTER TABLE `news`
@@ -287,11 +360,7 @@ ALTER TABLE `plots`
 -- Indexes for table `property`
 --
 ALTER TABLE `property`
-  ADD PRIMARY KEY (`Property_ID`),
-  ADD KEY `FK_CP` (`Country_ID`),
-  ADD KEY `FK_PS` (`Society_ID`),
-  ADD KEY `FK_PPH` (`Plot_House_ID`),
-  ADD KEY `FK_PP` (`Province_ID`);
+  ADD PRIMARY KEY (`property_id`);
 
 --
 -- Indexes for table `province`
@@ -321,7 +390,7 @@ ALTER TABLE `signup_as_user`
 -- Indexes for table `society`
 --
 ALTER TABLE `society`
-  ADD PRIMARY KEY (`Society_ID`);
+  ADD PRIMARY KEY (`society_id`);
 
 --
 -- Indexes for table `tbladmin`
@@ -340,16 +409,28 @@ ALTER TABLE `city`
   MODIFY `city_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
+-- AUTO_INCREMENT for table `forum`
+--
+ALTER TABLE `forum`
+  MODIFY `forum_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `forum_type`
+--
+ALTER TABLE `forum_type`
+  MODIFY `forum_type_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT for table `news`
 --
 ALTER TABLE `news`
-  MODIFY `news_id` int(20) NOT NULL AUTO_INCREMENT;
+  MODIFY `news_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `news_type`
 --
 ALTER TABLE `news_type`
-  MODIFY `news_type_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `news_type_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `plots`
@@ -361,7 +442,7 @@ ALTER TABLE `plots`
 -- AUTO_INCREMENT for table `property`
 --
 ALTER TABLE `property`
-  MODIFY `Property_ID` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `property_id` int(20) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `province`
@@ -385,7 +466,7 @@ ALTER TABLE `signup_as_user`
 -- AUTO_INCREMENT for table `society`
 --
 ALTER TABLE `society`
-  MODIFY `Society_ID` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `society_id` int(20) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `tbladmin`
@@ -404,27 +485,11 @@ ALTER TABLE `plots`
   ADD CONSTRAINT `plots_ibfk_1` FOREIGN KEY (`USER_ID`) REFERENCES `signup_as_agent` (`agent_id`);
 
 --
--- Constraints for table `property`
---
-ALTER TABLE `property`
-  ADD CONSTRAINT `FK_CP` FOREIGN KEY (`Country_ID`) REFERENCES `city` (`City_ID`),
-  ADD CONSTRAINT `FK_PP` FOREIGN KEY (`Province_ID`) REFERENCES `provinces` (`Province_ID`),
-  ADD CONSTRAINT `FK_PPH` FOREIGN KEY (`Plot_House_ID`) REFERENCES `plots` (`Plot_House_ID`),
-  ADD CONSTRAINT `FK_PS` FOREIGN KEY (`Society_ID`) REFERENCES `society` (`Society_ID`),
-  ADD CONSTRAINT `property_ibfk_1` FOREIGN KEY (`USER_ID`) REFERENCES `signup_as_agent` (`agent_id`);
-
---
 -- Constraints for table `searching`
 --
 ALTER TABLE `searching`
   ADD CONSTRAINT `FK_SP` FOREIGN KEY (`Property_ID`) REFERENCES `property` (`Property_ID`),
   ADD CONSTRAINT `searching_ibfk_1` FOREIGN KEY (`USER_ID`) REFERENCES `signup_as_agent` (`agent_id`);
-
---
--- Constraints for table `society`
---
-ALTER TABLE `society`
-  ADD CONSTRAINT `fk_sS` FOREIGN KEY (`USER_ID`) REFERENCES `signup_as_agent` (`agent_id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
