@@ -79,9 +79,15 @@
                   <div id="products-menu" class="dropdown-menu clearfix row" role="menu" >
                     <div class="column">
                         <li class="dropdown-header"><b>Rising Forums</b></li>  
-                        <li class="dropdown-text"><a href="forum.php?action=buyingproperty" style="text-decoration: none;">Buying Property</a></li>
-                          <li class="dropdown-text"><a href="forum.php?action=dailyfilerate" style="text-decoration: none;">Daily File Rates</a></li>
-                          <li class="dropdown-text"><a href="forum.php?action=sellingproperty" style="text-decoration: none;">Selling Properties</a></li>
+                          <?php 
+                            $forum = 'SELECT * FROM `forum_type`';
+                            $result = mysqli_query($db, $forum) or die (mysqli_error($db));
+                              while ($row = mysqli_fetch_array($result)) {
+                                $id = $row['forum_type_id'];  
+                                $name = $row['forum_type_name'];
+                                echo '<li class="dropdown-text"><a href="forum.php?action='.$id.'" style="text-decoration: none;">'.$name.'</a></li>';
+                              } 
+                          ?>
                     </div>
                   </div>
                 </div>
@@ -99,8 +105,6 @@
                               $id = $row['news_type_id'];  
                               $name = $row['news_type_name'];
                           echo '<li class="dropdown-text"><a href="news.php?action='.$id.'" style="text-decoration: none;">'.$name.'</a></li>';
-                        ?>  
-                          <?php
                           } 
                         ?>
                     </div>

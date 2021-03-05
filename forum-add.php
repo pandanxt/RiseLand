@@ -23,7 +23,7 @@
       <?php include('include/search-box.php'); ?>      
     </div><!--/col-md-4-->
     <?php 
-          $proId = (isset($_GET['action']) ? $_GET['action'] : ''); 
+          // $proId = (isset($_GET['action']) ? $_GET['action'] : ''); 
     ?>
     <!--SignUp-box Land-->
     <div class="panel panel-primary col-md-8" style="padding: 0px;margin-top: 10px; float: right;">
@@ -37,12 +37,26 @@
                     <form action="include/php-handler.php" method="post" enctype="multipart/form-data">
                         <div class="form-group">
                             <input type="hidden" name="agent" value="<?php echo $_SESSION['agentid'];?>">
-                            <input type="hidden" name="type" value="<?php echo $proId;?>">
+                            <!-- <input type="hidden" name="type" value="<?php //echo $proId;?>"> -->
                             <input type="hidden" name="status" value="Online">
                         </div>
                         <div class="form-group">
                             <label for="propertyname">Forum Title:</label>
                             <input type="text" id="propertyname" name="name" class="form-control" placeholder="Enter Title (Maximum one Line)." autofocus="autofocus" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="forumtype">Forum Type:</label>
+                            <select id="forumtype" name="type" class="form-control" required>
+                            <?php
+                                $type = 'SELECT `forum_type_id`,`forum_type_name` FROM `forum_type`';
+                                $result = mysqli_query($db, $type) or die (mysqli_error($db));
+                                  while ($row = mysqli_fetch_array($result)) {
+                                    $id = $row['forum_type_id'];  
+                                    $name = $row['forum_type_name'];
+                                    echo '<option value="'.$id.'">'.$name.'</option>'; 
+                              }
+                            ?>    
+                            </select>
                         </div>
                         <div class="form-group">
                             <label for="tiny-editor">Forum Description:</label>

@@ -1,3 +1,5 @@
+<!--Session Start-->
+<?php  session_start(); ?>
 <!--Connection File Include-->
 <?php include('include/conn.php'); ?>
 
@@ -39,7 +41,7 @@
             <table>
         <?php
             $forum = (isset($_GET['action']) ? $_GET['action'] : ''); 
-               $forum_user = "SELECT * FROM `forum` Where forum_type = ".$forum;
+               $forum_user = "SELECT * FROM `forum` a INNER JOIN `signup_as_agent` b Where a.`agent_id` = b.`agent_id` AND a.`forum_type_id` = ".$forum;
                $result = mysqli_query($db, $forum_user) or die (mysqli_error($db));
                 
             if($result){
@@ -60,11 +62,12 @@
                     echo '<div class="panel-body" style="border: 1px solid #337ab7; margin: 5px; border-radius: 5px;">';
                 
                     echo '<div class="col-md-9" style="float: left;">';
-                    echo '<p><small>Asked By: '.$forumPostby.'</small></p>';
-                    echo '<div class="col-md-12" style="height:150px; white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><p>'.$forumDesc.'</p></div>';
+                    echo '<div class="col-md-12" style="display: flex;"><p><small>Asked By: '.$forumPostby.'</small></p>&nbsp;&nbsp;&nbsp;<p><small>Post Date: '.$forumPostOn.'</small></p>&nbsp;&nbsp;&nbsp;<p><small>Status: '.$forumStatus.'</small></p></div>';
+                    echo '<div class="col-md-12" style=" white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><p>'.$forumDesc.'</p></div>';
+                    echo '<div class="col-md-12"><p>'.$forumEmail.'</p><p>'.$forumPhone.'</p></div>';
                     echo '</div>';
                     echo '<div class="col-md-3">';
-                    echo '<img style="width:150px;height:150px;margin:5px;border-radius:5px;" class="img-responsive" src="img/'.$newsImage.'"/>';
+                    echo '<img style="width:150px;height:150px;margin:5px;border-radius:5px;" class="img-responsive" src="img/'.$forumImage.'"/>';
                     echo '<a class="btn btn-primary" href="#" style="float:right;">Details</a>';
                     echo '</div>';
                     echo '</div>';

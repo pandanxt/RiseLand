@@ -158,7 +158,7 @@ if (isset($_POST['property-submit'])) {
 					header("Location: ../forum-add.php?error=forumTitleAlreadyTaken");
 					exit();
 				}else{
-						$sql = "INSERT INTO `forum`(`forum_title`, `forum_type`, `forum_status`, `forum_description`, `posted_on`, `agent_id`) VALUES (?,?,?,?,?,?)";
+						$sql = "INSERT INTO `forum`(`forum_title`, `forum_type_id`, `forum_status`, `forum_description`, `posted_on`, `agent_id`) VALUES (?,?,?,?,?,?)";
 						mysqli_stmt_execute($stmt);
 					
 						if (!mysqli_stmt_prepare($stmt,$sql)) {
