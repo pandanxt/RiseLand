@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 05, 2021 at 01:46 PM
+-- Generation Time: Mar 06, 2021 at 11:41 PM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 7.2.23
 
@@ -150,6 +150,52 @@ CREATE TABLE `plots` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `plot_for`
+--
+
+CREATE TABLE `plot_for` (
+  `plot_for_id` int(20) NOT NULL,
+  `plot_for_name` varchar(255) CHARACTER SET latin1 NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `plot_for`
+--
+
+INSERT INTO `plot_for` (`plot_for_id`, `plot_for_name`) VALUES
+(1, 'Buy/Sell'),
+(2, 'Rent'),
+(3, 'Wanted');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `plot_type`
+--
+
+CREATE TABLE `plot_type` (
+  `plot_type_id` int(20) NOT NULL,
+  `plot_type_name` varchar(255) CHARACTER SET latin1 NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `plot_type`
+--
+
+INSERT INTO `plot_type` (`plot_type_id`, `plot_type_name`) VALUES
+(1, 'House'),
+(2, 'Plot/Land'),
+(3, 'Flat/Apartments'),
+(4, 'Warehouse'),
+(5, 'Building'),
+(6, 'Farmhouse'),
+(7, 'Ground FLoor'),
+(8, 'Upper Portion'),
+(9, 'Office');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `property`
 --
 
@@ -167,6 +213,26 @@ CREATE TABLE `property` (
   `agent_id` int(20) NOT NULL,
   `society_id` int(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `property_type`
+--
+
+CREATE TABLE `property_type` (
+  `property_type_id` int(20) NOT NULL,
+  `property_type_name` varchar(255) CHARACTER SET latin1 NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `property_type`
+--
+
+INSERT INTO `property_type` (`property_type_id`, `property_type_name`) VALUES
+(1, 'Residential'),
+(2, 'Commercial'),
+(3, 'Agricultural');
 
 -- --------------------------------------------------------
 
@@ -292,6 +358,13 @@ CREATE TABLE `society` (
   `city_id` int(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `society`
+--
+
+INSERT INTO `society` (`society_id`, `society_name`, `society_location`, `society_descrption`, `society_image`, `society_status`, `agent_id`, `city_id`) VALUES
+(1, 'asdhasjd', '<p>Enter Society Description Here...!!!</p>', 'jsadasjkdhjkas', 'Pending', 'NewsImage_thumb.jpg', 1, 1);
+
 -- --------------------------------------------------------
 
 --
@@ -357,10 +430,28 @@ ALTER TABLE `plots`
   ADD UNIQUE KEY `Plot/House_ID` (`Plot_House_ID`);
 
 --
+-- Indexes for table `plot_for`
+--
+ALTER TABLE `plot_for`
+  ADD PRIMARY KEY (`plot_for_id`);
+
+--
+-- Indexes for table `plot_type`
+--
+ALTER TABLE `plot_type`
+  ADD PRIMARY KEY (`plot_type_id`);
+
+--
 -- Indexes for table `property`
 --
 ALTER TABLE `property`
   ADD PRIMARY KEY (`property_id`);
+
+--
+-- Indexes for table `property_type`
+--
+ALTER TABLE `property_type`
+  ADD PRIMARY KEY (`property_type_id`);
 
 --
 -- Indexes for table `province`
@@ -439,10 +530,28 @@ ALTER TABLE `plots`
   MODIFY `Plot_House_ID` int(10) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `plot_for`
+--
+ALTER TABLE `plot_for`
+  MODIFY `plot_for_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `plot_type`
+--
+ALTER TABLE `plot_type`
+  MODIFY `plot_type_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
 -- AUTO_INCREMENT for table `property`
 --
 ALTER TABLE `property`
   MODIFY `property_id` int(20) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `property_type`
+--
+ALTER TABLE `property_type`
+  MODIFY `property_type_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `province`
@@ -466,7 +575,7 @@ ALTER TABLE `signup_as_user`
 -- AUTO_INCREMENT for table `society`
 --
 ALTER TABLE `society`
-  MODIFY `society_id` int(20) NOT NULL AUTO_INCREMENT;
+  MODIFY `society_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `tbladmin`

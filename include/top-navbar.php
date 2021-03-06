@@ -25,15 +25,16 @@
               }else if (isset($_SESSION['agentid'])) {
                 echo '<ul class="nav navbar-nav navbar-right">';
                 
-                echo '<li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-globe"></span><b> Post Property</b></a>';
-                echo '<div class="dropdown-menu" aria-labelledby="navbarDropdown" style="width:max-content;padding:10px 10px 10px 0px;margin-right:20px;">';
-                echo '<ol style="text-decoration:none;">';
-                echo '<li><a class="dropdown-item" href="property-add.php?action=Residential" style="text-decoration:none;"><b>Residential <small>(Buy/Selling)</small></b></a></li>';
-                echo '<li><a class="dropdown-item" href="property-add.php?action=Commercial" style="text-decoration:none;"><b>Commercial <small>(Buy/Selling)</small></b></a></li>';
-                echo '<li><a class="dropdown-item" href="property-add.php?action=Agricultural" style="text-decoration:none;"><b>Agricultural <small>(Buy/Selling)</small></b></a></li>';
-                echo '</ol>';
-                echo '</div>';
-                echo ' </li>';
+                echo '<li class="nav-item"><a class="nav-link" href="property-add.php"><span class="glyphicon glyphicon-globe"></span><b> Post Property</b></a></li>';
+                // echo '<li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-globe"></span><b> Post Property</b></a>';
+                // echo '<div class="dropdown-menu" aria-labelledby="navbarDropdown" style="width:max-content;padding:10px 10px 10px 0px;margin-right:20px;">';
+                // echo '<ol style="text-decoration:none;">';
+                // echo '<li><a class="dropdown-item" href="property-add.php?action=Residential" style="text-decoration:none;"><b>Residential <small>(Buy/Selling)</small></b></a></li>';
+                // echo '<li><a class="dropdown-item" href="property-add.php?action=Commercial" style="text-decoration:none;"><b>Commercial <small>(Buy/Selling)</small></b></a></li>';
+                // echo '<li><a class="dropdown-item" href="property-add.php?action=Agricultural" style="text-decoration:none;"><b>Agricultural <small>(Buy/Selling)</small></b></a></li>';
+                // echo '</ol>';
+                // echo '</div>';
+                // echo ' </li>';
                 
                 echo '<li class="nav-item"><a class="nav-link" href="forum-add.php"><span class="glyphicon glyphicon-certificate"></span><b> Ask On Forum</b></a></li>';
                 // echo '<div class="dropdown-menu" aria-labelledby="navbarDropdown" style="width:max-content;padding:10px 10px 10px 0px;margin-right:20px;">';

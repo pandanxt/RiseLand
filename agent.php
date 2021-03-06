@@ -1,3 +1,6 @@
+<!--Session Start-->
+<?php session_start(); ?>
+
 <!--Connection File Include-->
 <?php include('include/conn.php'); ?>
 

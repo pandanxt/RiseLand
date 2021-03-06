@@ -49,16 +49,48 @@
                             <input type="text" id="propertyaddress" name="location" class="form-control" placeholder="Enter Property Location" required>
                         </div>
                         <div class="form-group">
-                            <label for="propertytype">Property Type:</label>
-                            <select id="propertytype" name="type" class="form-control" required>
-                            <option disabled selected>Select Property Type</option>
-                            <option value="house">House</option>
-                            <option value="plot">Land/Plot</option>
-                            <option value="flat">Flat/Apartment</option>
-                            <option value="office">Office</option>
-                            <option value="building">Building</option>
-                            <option value="farmhouse">Farmhouse</option>
-                            <option value="warehouse">Warehouse</option>
+                          <label for="propertytype">Property Type:</label>
+                            <select id="propertytype" name="propertytype" class="form-control" required>
+                              <option disabled selected>Select Property Type</option>
+                              <?php
+                                $type = 'SELECT `property_type_id`,`property_type_name` FROM `property_type`';
+                                $result = mysqli_query($db, $type) or die (mysqli_error($db));
+                                  while ($row = mysqli_fetch_array($result)) {
+                                    $id = $row['property_type_id'];  
+                                    $name = $row['property_type_name'];
+                                    echo '<option value="'.$id.'">'.$name.'</option>'; 
+                                }
+                              ?>    
+                            </select>
+                        </div>
+                        <div class="form-group">
+                          <label for="plotfor">Plot Required For:</label>
+                            <select id="plotfor" name="plotfor" class="form-control" required>
+                              <option disabled selected>Select Plot Required For</option>
+                              <?php
+                                $type = 'SELECT `plot_for_id`,`plot_for_name` FROM `plot_for`';
+                                $result = mysqli_query($db, $type) or die (mysqli_error($db));
+                                  while ($row = mysqli_fetch_array($result)) {
+                                    $id = $row['plot_for_id'];  
+                                    $name = $row['plot_for_name'];
+                                    echo '<option value="'.$id.'">'.$name.'</option>'; 
+                                }
+                              ?>    
+                            </select>
+                        </div>
+                        <div class="form-group">
+                          <label for="plottype">Plot Type:</label>
+                            <select id="plottype" name="plottype" class="form-control" required>
+                              <option disabled selected>Select Plot Type</option>
+                              <?php
+                                $type = 'SELECT `plot_type_id`,`plot_type_name` FROM `plot_type`';
+                                $result = mysqli_query($db, $type) or die (mysqli_error($db));
+                                  while ($row = mysqli_fetch_array($result)) {
+                                    $id = $row['plot_type_id'];  
+                                    $name = $row['plot_type_name'];
+                                    echo '<option value="'.$id.'">'.$name.'</option>'; 
+                                }
+                              ?>    
                             </select>
                         </div>
                         <div class="form-group">
@@ -68,6 +100,7 @@
                         <div class="form-group">
                             <label for="newstype">Society Of Property:</label>
                             <select id="newstype" name="society" class="form-control" required>
+                              <option disabled selected>Select Society of Property</option>
                             <?php
                                 $type = 'SELECT `society_id`,`society_name` FROM `society`';
                                 $result = mysqli_query($db, $type) or die (mysqli_error($db));

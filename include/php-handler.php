@@ -42,7 +42,7 @@ if (isset($_POST['property-submit'])) {
 					mysqli_stmt_execute($stmt);
 					
 					if (!mysqli_stmt_prepare($stmt,$sql)) {
-						header("Location: property-add.php?error=sqlerror");
+						header("Location: ../property-add.php?error=sqlerror");
 						exit();
 					}else{
 						mysqli_stmt_bind_param($stmt,"sssssssssss",$name, $description, $propertytype, $plottype, $location, $price, $postOn, $status, $filename, $postBy, $society);
