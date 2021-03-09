@@ -59,6 +59,44 @@
             height: 12rem;
             margin-left: 5rem;
         }
+        .property-body{
+          border: 1px solid #337ab7;
+          margin: 5px;
+          border-radius: 3px;
+        }
+        .left-box {
+          float: left;
+          border: 1px solid #337ab7; 
+          padding:5px;
+          /* margin: 1px;  */
+          border-radius: 5px;
+        }
+        .right-box {
+          float:right;
+          border: 1px solid #337ab7; 
+          padding:5px;
+          /* margin: 1px;  */
+          border-radius: 3px;
+        }
+        .img-box {
+          width:100px;
+          height:100px;
+        }
+        .table-box {
+            border: 1px solid #3175af;
+            background-color: #e5e5e5;
+            /* border-radius: 1px; */
+            margin-top:-1px;
+            /* margin:1px; */
+        }
+        .pp {
+          margin:0 !important;
+          text-align:center;
+        }
+        .col {
+          color:#3175b0;
+        }
+
     </style>
 </head>
 <body>

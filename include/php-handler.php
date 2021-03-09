@@ -15,6 +15,7 @@ if (isset($_POST['property-submit'])) {
 	$folder = "../img/".$filename; 
 	$location =  $_POST['location'];
 	$propertytype =  $_POST['type'];
+	$plotfor =  $_POST['plotfor'];
 	$price =  $_POST['price'];
 	$society =  $_POST['society'];
 	$plottype =  $_POST['plottype'];
@@ -38,21 +39,21 @@ if (isset($_POST['property-submit'])) {
 					header("Location: ../property-add.php?error=propertyNameAlreadyTaken");
 					exit();
 				}elseif(move_uploaded_file($tempname, $folder)){
-					  $sql = "INSERT INTO `property`(`property_name`, `property_description`, `property_type`, `property_plot`, `property_location`, `property_price`, `property_posted_on`, `property_status`, `property_image`, `agent_id`, `society_id`) VALUES (?,?,?,?,?,?,?,?,?,?,?)";
+					  $sql = "INSERT INTO `property`(`property_name`, `property_description`, `property_type`, `property_plot`, `plot_for`, `property_location`, `property_price`, `property_posted_on`, `property_status`, `property_image`, `agent_id`, `society_id`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)";
 					mysqli_stmt_execute($stmt);
 					
 					if (!mysqli_stmt_prepare($stmt,$sql)) {
 						header("Location: ../property-add.php?error=sqlerror");
 						exit();
 					}else{
-						mysqli_stmt_bind_param($stmt,"sssssssssss",$name, $description, $propertytype, $plottype, $location, $price, $postOn, $status, $filename, $postBy, $society);
+						mysqli_stmt_bind_param($stmt,"ssssssssssss",$name, $description, $propertytype, $plottype, $plotfor, $location, $price, $postOn, $status, $filename, $postBy, $society);
 						mysqli_stmt_execute($stmt);
 				
 						echo '<script type="text/javascript">alert("New Property is Successfully Added");window.location = "../index.php";</script>';								
 						exit();
 					}
 				}else{
-					$sql = "INSERT INTO `property`(`property_name`, `property_description`, `property_type`, `property_plot`, `property_location`, `property_price`, `property_posted_on`, `property_status`, `property_image`, `agent_id`, `society_id`) VALUES (?,?,?,?,?,?,?,?,?,?,?)";
+					$sql = "INSERT INTO `property`(`property_name`, `property_description`, `property_type`, `property_plot`, `plot_for`, `property_location`, `property_price`, `property_posted_on`, `property_status`, `property_image`, `agent_id`, `society_id`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)";
 					mysqli_stmt_execute($stmt);
 				
 					if (!mysqli_stmt_prepare($stmt,$sql)) {
@@ -60,7 +61,7 @@ if (isset($_POST['property-submit'])) {
 						exit();
 					}else{
 						$image = 'NewsImage_thumb.jpg';
-						mysqli_stmt_bind_param($stmt,"sssssssssss",$name, $description, $propertytype, $plottype, $location, $price, $postOn, $status, $image, $postBy, $society);
+						mysqli_stmt_bind_param($stmt,"ssssssssssss",$name, $description, $propertytype, $plottype, $plotfor, $location, $price, $postOn, $status, $image, $postBy, $society);
 						mysqli_stmt_execute($stmt);
 				
 						echo '<script type="text/javascript">alert("New Property is Successfully Added");window.location = "../index.php";</script>';								
