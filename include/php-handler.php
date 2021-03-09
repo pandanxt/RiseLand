@@ -38,7 +38,7 @@ if (isset($_POST['property-submit'])) {
 					header("Location: ../property-add.php?error=propertyNameAlreadyTaken");
 					exit();
 				}elseif(move_uploaded_file($tempname, $folder)){
-					$sql = "INSERT INTO `property`(`property_name`, `property_description`, `property_type`, `property_plot`, `property_address`, `property_price`, `property_posted_on`, `property_status`, `property_image`, `agent_id`, `society_id`) VALUES (?,?,?,?,?,?,?,?,?,?,?)";
+					  $sql = "INSERT INTO `property`(`property_name`, `property_description`, `property_type`, `property_plot`, `property_location`, `property_price`, `property_posted_on`, `property_status`, `property_image`, `agent_id`, `society_id`) VALUES (?,?,?,?,?,?,?,?,?,?,?)";
 					mysqli_stmt_execute($stmt);
 					
 					if (!mysqli_stmt_prepare($stmt,$sql)) {
@@ -52,7 +52,7 @@ if (isset($_POST['property-submit'])) {
 						exit();
 					}
 				}else{
-					$sql = "INSERT INTO `property`(`property_name`, `property_description`, `property_type`, `property_plot`, `property_address`, `property_price`, `property_posted_on`, `property_status`, `property_image`, `agent_id`, `society_id`) VALUES (?,?,?,?,?,?,?,?,?,?,?)";
+					$sql = "INSERT INTO `property`(`property_name`, `property_description`, `property_type`, `property_plot`, `property_location`, `property_price`, `property_posted_on`, `property_status`, `property_image`, `agent_id`, `society_id`) VALUES (?,?,?,?,?,?,?,?,?,?,?)";
 					mysqli_stmt_execute($stmt);
 				
 					if (!mysqli_stmt_prepare($stmt,$sql)) {

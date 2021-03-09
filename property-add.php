@@ -23,12 +23,12 @@
       <?php include('include/search-box.php'); ?>      
     </div><!--/col-md-4-->
     <?php 
-          $proId = (isset($_GET['action']) ? $_GET['action'] : ''); 
+          // $proId = (isset($_GET['action']) ? $_GET['action'] : ''); 
     ?>
     <!--SignUp-box Land-->
     <div class="panel panel-primary col-md-8" style="padding: 0px;margin-top: 10px; float: right;">
       <div class="panel-heading">
-        <?php echo'<h3 class="panel-title">Post a '.$proId.' Property</h3>';?>
+        <?php echo'<h3 class="panel-title">Post a Property</h3>';?>
       </div>
       <div class="panel-body" style="border: 1px solid #337ab7; margin: 5px; border-radius: 5px;">
         <div class="col-md-12" style="margin:0px;padding:0px;">
@@ -37,7 +37,7 @@
                     <form action="include/php-handler.php" method="post" enctype="multipart/form-data">
                         <div class="form-group">
                             <input type="hidden" name="agent" value="<?php echo $_SESSION['agentid'];?>">
-                            <input type="hidden" name="plottype" value="<?php echo $proId;?>">
+                            <!-- <input type="hidden" name="plottype" value="<?php //echo $proId;?>"> -->
                             <input type="hidden" name="status" value="Available">
                         </div>
                         <div class="form-group">
@@ -50,7 +50,7 @@
                         </div>
                         <div class="form-group">
                           <label for="propertytype">Property Type:</label>
-                            <select id="propertytype" name="propertytype" class="form-control" required>
+                            <select id="propertytype" name="type" class="form-control" required>
                               <option disabled selected>Select Property Type</option>
                               <?php
                                 $type = 'SELECT `property_type_id`,`property_type_name` FROM `property_type`';
@@ -118,7 +118,7 @@
                         </div>
                         <div class="form-group">
                             <label for="tiny-editor">Property Description:</label>
-                            <textarea name="description" class="form-control" rows="5" id="textarea">Enter News Description Here...!!!</textarea>
+                            <textarea name="description" class="form-control" rows="5" id="textarea">Enter Property Description Here...!!!</textarea>
                         </div>
                         <button type="submit" class="btn btn-primary btn-block" name="property-submit">Submit</button>
                     </form>
