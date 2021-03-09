@@ -63,20 +63,40 @@
           <div class="col-md-12">
 
             <!---News-box-1--->
-              <div class="col-sm-6 col-md-4">
-                <a href="#" style="text-decoration: none;">
-                  <div class="thumbnail">
-                  <img src="img/Logo.jpeg" alt="...">
-                  <div class="caption">
-                    <h4 style="color:#fdc222;">Canterbury Enclave Islamabad Location Map - Payment Plan - Details</h4>
-                    <p>Canterbury Enclave Islamabad is a recently launched residential project whi...</p>
-                  </div>
-                </div>
-              </a>
-              </div>
+            <?php
+            // $forum = (isset($_GET['action']) ? $_GET['action'] : ''); 
+               $forum_user = "SELECT * FROM (SELECT * FROM news ORDER BY news_id DESC LIMIT 3) t ORDER BY news_id ASC";               
+               $result = mysqli_query($db, $forum_user) or die (mysqli_error($db));
+                
+            if($result){
+                while ($row = mysqli_fetch_array($result)) {
+                    $newsId = $row['news_id'];
+                    $newsName = $row['news_name'];
+                    $newsDescription = $row['news_description'];
+                    $newsType = $row['news_type'];
+                    $newsImage = $row['news_image'];
+                    $newsPostedOn = $row['news_post_on'];
+                    $newsPostedBy = $row['news_post_by'];
+                   
+                    echo '<div class="col-sm-6 col-md-4">';
+                    echo '<a href="#" style="text-decoration: none;">';
+                    echo '<div class="thumbnail">';
+                    echo '<img class="news-image" src="img/'.$newsImage.'" alt="'.$newsName.'">';
+                    echo '<div class="caption">';
+                    echo '<h4  class="text" style="color:#fdc222;">'.$newsName.'</h4>';
+                    echo '<div class="text">'.$newsDescription.'</div>';
+                    echo '</div>';
+                    echo '</div>';
+                    echo '</a>';
+                    echo '</div>';
+                
+               } 
+            }
+            ?>
+              
 
               <!---News-box-2--->
-              <div class="col-sm-6 col-md-4">
+              <!-- <div class="col-sm-6 col-md-4">
                 <a href="#" style="text-decoration: none;">
                 <div class="thumbnail">
                   <img src="img/Logo.jpeg" alt="...">
@@ -85,21 +105,21 @@
                     <p>Lania Arcadia is a marvellous residential project in Karachi which has been...</p>
                   </div>
                 </div>
-              </a>
-              </div>
+                </a>
+              </div> -->
 
               <!---News-box-3--->
-              <div class="col-sm-6 col-md-4">
-              <a href="#" style="text-decoration: none;">
-                <div class="thumbnail">
-                  <img src="img/Logo.jpeg" alt="...">
-                  <div class="caption">
-                    <h4 style="color:#fdc222;">Wasi Country Park Karachi Location Map - Payment Plan - Details</h4>
-                    <p>Wasi Country Park is a multi-serving residential project which has been ini...</p>
+              <!-- <div class="col-sm-6 col-md-4">
+                <a href="#" style="text-decoration: none;">
+                  <div class="thumbnail">
+                    <img src="img/Logo.jpeg" alt="...">
+                    <div class="caption">
+                      <h4 style="color:#fdc222;">Wasi Country Park Karachi Location Map - Payment Plan - Details</h4>
+                      <p>Wasi Country Park is a multi-serving residential project which has been ini...</p>
+                    </div>
                   </div>
-                </div>
-              </a>  
-              </div>
+                </a>  
+              </div> -->
           </div>
         </div>
       </div>

@@ -43,6 +43,22 @@
           margin-top:5px;
           margin-bottom:0px !important;
         }
+        .text {
+          display: flex;
+          width: 100%;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+        }
+        .news-image {
+            width: 20rem !important;
+            height: 20rem !important;
+        }
+        .slider-img {
+            width: 20rem;
+            height: 12rem;
+            margin-left: 5rem;
+        }
     </style>
 </head>
 <body>
