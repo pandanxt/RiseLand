@@ -62,6 +62,7 @@
                 
             if($result){
                 while ($row = mysqli_fetch_array($result)) {
+                    $propertyId = $row['property_id'];
                     $propertyTitle = $row['property_name'];
                     $propertyDesc = $row['property_description'];
                     $propertyPostedOn = $row['property_posted_on'];
@@ -161,7 +162,7 @@
                                
 
                                 echo '<div class="col-md-12">';
-                                    echo '<a class="btn btn-primary" href="#" style="float:right;">Details</a>';
+                                    echo '<a class="btn btn-primary" href="property-detail.php?id='.$propertyId.'" style="float:right;">Details</a>';
                                 echo '</div>';
                                 
                             echo '</div>';
