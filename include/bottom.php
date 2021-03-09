@@ -3,22 +3,23 @@
         <h2 style="color:#fdc222;">Plots For Sale in Pakistan</h2>
         <div class="row">
           <div class="col-md-12">
-            <div class="col-md-3" style="text-align: left;">
-            <p><a href="#">Lahore</a></p>
-            <p><a href="#">Faisalabad</a></p>
-            </div>
-            <div class="col-md-3" style="text-align: left;">
-              <p><a href="#">Lahore</a></p>
-              <p><a href="#">Faisalabad</a></p>
-            </div>
-            <div class="col-md-3" style="text-align: left;">
-              <p><a href="#">Lahore</a></p>
-              <p><a href="#">Faisalabad</a></p>
-            </div>
-            <div class="col-md-3" style="text-align: left;">
-              <p><a href="#">Lahore</a></p>
-              <p><a href="#">Faisalabad</a></p>
-            </div>
+          <?php
+            // $forum = (isset($_GET['action']) ? $_GET['action'] : ''); 
+               $forum_user = "SELECT * FROM (SELECT * FROM city ORDER BY city_id DESC LIMIT 12) t ORDER BY city_id ASC";               
+               $result = mysqli_query($db, $forum_user) or die (mysqli_error($db));
+                
+            if($result){
+                while ($row = mysqli_fetch_array($result)) {
+                    $cityId = $row['city_id'];
+                    $cityName = $row['city_name'];
+                  ?> 
+                  <div class="col-md-12" style="text-align: left;">
+                   <?php echo '<p class="col-md-3"><a href="city.php?action='.$cityId.'">'.$cityName.'</a></p>';?>
+                  </div>
+                
+              <?php } 
+            }
+            ?>
           </div>
         </div>
       </div>
@@ -28,30 +29,23 @@
         <h2 style="color:#fdc222;">Plots For Sale in Popular Location</h2>
         <div class="row">
           <div class="col-md-12">
-            <div class="col-md-3" style="text-align: left;">
-            <p><a href="#">Al-Noor Orchard Lahore</a></p>
-            <p><a href="#">Bahria Town Peshawar</a></p>
-            <p><a href="#">DHA Islamabad</a></p>
-            <p><a href="#">Master City Gujranwala</a></p>
-            </div>
-            <div class="col-md-3" style="text-align: left;">
-            <p><a href="#">Al-Noor Orchard Lahore</a></p>
-            <p><a href="#">Bahria Town Peshawar</a></p>
-            <p><a href="#">DHA Islamabad</a></p>
-            <p><a href="#">Master City Gujranwala</a></p>
-            </div>
-            <div class="col-md-3" style="text-align: left;">
-              <p><a href="#">Al-Noor Orchard Lahore</a></p>
-              <p><a href="#">Bahria Town Peshawar</a></p>
-              <p><a href="#">DHA Islamabad</a></p>
-              <p><a href="#">Master City Gujranwala</a></p>
-            </div>
-            <div class="col-md-3" style="text-align: left;">
-              <p><a href="#">Al-Noor Orchard Lahore</a></p>
-            <p><a href="#">Bahria Town Peshawar</a></p>
-            <p><a href="#">DHA Islamabad</a></p>
-            <p><a href="#">Master City Gujranwala</a></p>
-            </div>
+          <?php
+            // $forum = (isset($_GET['action']) ? $_GET['action'] : ''); 
+               $forum_user = "SELECT * FROM (SELECT * FROM society ORDER BY society_id DESC LIMIT 20) t ORDER BY society_id ASC";               
+               $result = mysqli_query($db, $forum_user) or die (mysqli_error($db));
+                
+            if($result){
+                while ($row = mysqli_fetch_array($result)) {
+                    $societyId = $row['society_id'];
+                    $societyName = $row['society_name'];
+                  ?> 
+                  <div class="col-md-12" style="text-align: left;">
+                   <?php echo '<p class="col-md-3"><a href="society.php?action='.$societyId.'">'.$societyName.'</a></p>';?>
+                  </div>
+                
+              <?php } 
+            }
+            ?>
           </div>
         </div>
       </div>
@@ -93,33 +87,7 @@
                } 
             }
             ?>
-              
-
-              <!---News-box-2--->
-              <!-- <div class="col-sm-6 col-md-4">
-                <a href="#" style="text-decoration: none;">
-                <div class="thumbnail">
-                  <img src="img/Logo.jpeg" alt="...">
-                  <div class="caption">
-                    <h4 style="color:#fdc222;">Lania Arcadia Karachi Location Map - Payment Plan - Details</h4>
-                    <p>Lania Arcadia is a marvellous residential project in Karachi which has been...</p>
-                  </div>
-                </div>
-                </a>
-              </div> -->
-
-              <!---News-box-3--->
-              <!-- <div class="col-sm-6 col-md-4">
-                <a href="#" style="text-decoration: none;">
-                  <div class="thumbnail">
-                    <img src="img/Logo.jpeg" alt="...">
-                    <div class="caption">
-                      <h4 style="color:#fdc222;">Wasi Country Park Karachi Location Map - Payment Plan - Details</h4>
-                      <p>Wasi Country Park is a multi-serving residential project which has been ini...</p>
-                    </div>
-                  </div>
-                </a>  
-              </div> -->
+            
           </div>
         </div>
       </div>
