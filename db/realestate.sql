@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 10, 2021 at 09:45 AM
+-- Generation Time: Mar 10, 2021 at 10:29 AM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 7.2.23
 
@@ -35,13 +35,6 @@ CREATE TABLE `city` (
   `province_id` int(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data for table `city`
---
-
-INSERT INTO `city` (`city_id`, `city_name`, `city_location`, `city_description`, `province_id`) VALUES
-(1, 'Lahore', 'https://maps.google.com/maps?width=600&amp;height=400&amp;hl=en&amp;q=Lahore&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed', '<p style=\"box-sizing: border-box; margin: 0px; font-size: 13px; line-height: 20px; padding: 0px; color: #888888; font-family: \'Segoe UI\'; background-color: #fbfbfb; text-align: justify;\">Lahore carries the essence of human origin and the model of human growth. Such places become significant for those who like to enjoy the nostalgia of old thoughts. The city of Lahore can truly be remembered as such a place. Having seen so many highs and lows of the past and culture, Lahore in it is now complete humankind carrying a multitude of the past and the keenness to excel in the future. From the Victorian era to the Mughal period, from buildings and gardens to forts, the diversity of Lahore is sometimes unbearable, yet the charm is timeless.</p>\r\n<p style=\"box-sizing: border-box; margin: 0px; font-size: 13px; line-height: 20px; padding: 0px; color: #888888; font-family: \'Segoe UI\'; background-color: #fbfbfb; text-align: justify;\"><span style=\"box-sizing: border-box; font-weight: bold;\">Location:</span></p>\r\n<p style=\"box-sizing: border-box; margin: 0px; font-size: 13px; line-height: 20px; padding: 0px; color: #888888; font-family: \'Segoe UI\'; background-color: #fbfbfb; text-align: justify;\">Lahore is bounded west by the Sheikhupura District, on the east have Wagah Border, and on the south by Kasur District. The Ravi River flows in the northern region of Lahore. Lahore city is spread over a total soil area of 1014 km and is still increasing.</p>\r\n<p style=\"box-sizing: border-box; margin: 0px; font-size: 13px; line-height: 20px; padding: 0px; color: #888888; font-family: \'Segoe UI\'; background-color: #fbfbfb; text-align: justify;\"><span style=\"box-sizing: border-box; font-weight: bold;\">Linguistic:</span></p>\r\n<p style=\"box-sizing: border-box; margin: 0px; font-size: 13px; line-height: 20px; padding: 0px; color: #888888; font-family: \'Segoe UI\'; background-color: #fbfbfb; text-align: justify;\">Punjabi is the local language of the area. Urdu and English and many other native languages are also spoken and understood by most people.</p>\r\n<p style=\"box-sizing: border-box; margin: 0px; font-size: 13px; line-height: 20px; padding: 0px; color: #888888; font-family: \'Segoe UI\'; background-color: #fbfbfb; text-align: justify;\"><span style=\"box-sizing: border-box; font-weight: bold;\">Historical Places:</span></p>\r\n<p style=\"box-sizing: border-box; margin: 0px; font-size: 13px; line-height: 20px; padding: 0px; color: #888888; font-family: \'Segoe UI\'; background-color: #fbfbfb; text-align: justify;\">Badshahi Mosque, Aiwan-e-Iqbal, Bibi Pak Daman, Chauburji, Data Durbar, Lahore Fort, Minar-e-Pakistan, Sheesh Mahal, Anarkali Bazaar, Gawalmandi, Liberty Market, M. M. Alam Road, Pak Tea House, The Mall, Food Street, Fortress Stadium, Shah Alam Market, Shalimar Garden, Lahore Museum, NCA, Bagh-e-Jinnah.</p>\r\n<p style=\"box-sizing: border-box; margin: 0px; font-size: 13px; line-height: 20px; padding: 0px; color: #888888; font-family: \'Segoe UI\'; background-color: #fbfbfb; text-align: justify;\"><span style=\"box-sizing: border-box; font-weight: bold;\">Economy:</span></p>\r\n<p style=\"box-sizing: border-box; margin: 0px; font-size: 13px; line-height: 20px; padding: 0px; color: #888888; font-family: \'Segoe UI\'; background-color: #fbfbfb; text-align: justify;\">Lahore\'s economic strength consists of the reality that it is the largest city of Pakistan\'s most heavily populated province. It is also the most modern &amp; advanced in terms of infrastructure, having broad and relatively well-urbanized road links to all major cities in Punjab and North-West Frontier Province, a rail connection with India, and the province\'s prime International airport. It has the most developed education and health facilities as well, making it the economic, political, and educational nucleus of the province. &lrm; As Lahore expands, old residential areas are being turned into commercial centers, and the rural population is relentlessly moving outwards Lahore.</p>\r\n<p style=\"box-sizing: border-box; margin: 0px; font-size: 13px; line-height: 20px; padding: 0px; color: #888888; font-family: \'Segoe UI\'; background-color: #fbfbfb; text-align: justify;\"><span style=\"box-sizing: border-box; font-weight: bold;\">Real Estate Developments:</span></p>\r\n<p style=\"box-sizing: border-box; margin: 0px; font-size: 13px; line-height: 20px; padding: 0px; color: #888888; font-family: \'Segoe UI\'; background-color: #fbfbfb; text-align: justify;\">Bahria Town, DHA Lahore Phases, Eden Housing, Cooperative Housing Societies of Lahore, PCSIR Housing, Lake City, Model Town, Garden Town, Johar Town, Faisal Town, Iqbal Town, Township, Lahore Cantt, Gulberg, E.t.c.</p>\r\n<p style=\"box-sizing: border-box; margin: 0px; font-size: 13px; line-height: 20px; padding: 0px; color: #888888; font-family: \'Segoe UI\'; background-color: #fbfbfb;\">&nbsp;</p>\r\n<div class=\"ca-contact\" style=\"box-sizing: border-box; color: #888888; font-family: \'Segoe UI\'; font-size: 13px; background-color: #fbfbfb;\"><strong style=\"box-sizing: border-box;\">Total Developments in Lahore: 171</strong></div>', 1);
-
 -- --------------------------------------------------------
 
 --
@@ -57,14 +50,6 @@ CREATE TABLE `forum` (
   `posted_on` datetime NOT NULL,
   `agent_id` int(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `forum`
---
-
-INSERT INTO `forum` (`forum_id`, `forum_title`, `forum_type_id`, `forum_status`, `forum_description`, `posted_on`, `agent_id`) VALUES
-(1, 'asdjhasjkdh', 3, 'Online', '<p>Enter Complete Description Here...!!!</p>', '2021-03-05 13:00:07', 1),
-(2, 'sjkadhasjkdsa', 3, 'Online', '<h1 style=\"text-align: center; padding-left: 40px;\"><em><strong>Enter Complete Description Here...!!!</strong></em></h1>\r\n<h1 style=\"text-align: center; padding-left: 40px;\"><em><strong>jsadjaskdjkassa</strong></em></h1>', '2021-03-05 13:00:47', 1);
 
 -- --------------------------------------------------------
 
@@ -102,15 +87,6 @@ CREATE TABLE `news` (
   `news_post_by` int(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data for table `news`
---
-
-INSERT INTO `news` (`news_id`, `news_name`, `news_description`, `news_type`, `news_image`, `news_post_on`, `news_post_by`) VALUES
-(1, 'Earth Quick in Pakistan Region', '<p style=\"text-align: center;\"><em>Enter News Description Here...!!!</em></p>', 2, 'NewsImage_thumb.jpg', '2021-02-12 14:19:59', 1),
-(2, 'Top 5 Best Real Estate Investments In Gujranwala 2019', '<p dir=\"ltr\" style=\"box-sizing: border-box; margin: 0px; font-size: 13px; line-height: 20px; padding: 0px; color: #888888; font-family: \'Segoe UI\'; background-color: #f5f5f5;\">Major developers are focused on the residential market as high demand for more communities across the country continues to drive purchases, especially in the affordable housing sector. Previously only large cities were considered but now with the overall revolution of the real estate, a quality living and investment options are bright in all the cities of Pakistan.&nbsp;</p>\r\n<p style=\"box-sizing: border-box; margin: 0px; font-size: 13px; line-height: 20px; padding: 0px; color: #888888; font-family: \'Segoe UI\'; background-color: #f5f5f5;\"><span style=\"box-sizing: border-box; color: #333399;\"><span style=\"box-sizing: border-box; font-weight: bold;\"><a style=\"box-sizing: border-box; background: transparent; color: #5e5e5e; text-decoration-line: none; cursor: pointer; transition: color 0.1s linear 0s; -webkit-font-smoothing: antialiased;\" href=\"https://wall.pk/real-estate-investments-in-gujranwala-single-news-1848.aspx#master\"><span style=\"box-sizing: border-box; color: #333399;\">Master City Gujranwala</span></a></span></span></p>\r\n<p style=\"box-sizing: border-box; margin: 0px; font-size: 13px; line-height: 20px; padding: 0px; color: #888888; font-family: \'Segoe UI\'; background-color: #f5f5f5;\"><span style=\"box-sizing: border-box; color: #333399;\"><span style=\"box-sizing: border-box; font-weight: bold;\"><a style=\"box-sizing: border-box; background: transparent; color: #5e5e5e; text-decoration-line: none; cursor: pointer; transition: color 0.1s linear 0s; -webkit-font-smoothing: antialiased;\" href=\"https://wall.pk/real-estate-investments-in-gujranwala-single-news-1848.aspx#dha\"><span style=\"box-sizing: border-box; color: #333399;\">DHA Gujranwala</span></a></span></span></p>\r\n<p style=\"box-sizing: border-box; margin: 0px; font-size: 13px; line-height: 20px; padding: 0px; color: #888888; font-family: \'Segoe UI\'; background-color: #f5f5f5;\"><span style=\"box-sizing: border-box; color: #333399;\"><span style=\"box-sizing: border-box; font-weight: bold;\"><a style=\"box-sizing: border-box; background: transparent; color: #5e5e5e; text-decoration-line: none; cursor: pointer; transition: color 0.1s linear 0s; -webkit-font-smoothing: antialiased;\" href=\"https://wall.pk/real-estate-investments-in-gujranwala-single-news-1848.aspx#citi\"><span style=\"box-sizing: border-box; color: #333399;\">Citi Housing Gujranwala</span></a></span></span></p>\r\n<p style=\"box-sizing: border-box; margin: 0px; font-size: 13px; line-height: 20px; padding: 0px; color: #888888; font-family: \'Segoe UI\'; background-color: #f5f5f5;\"><span style=\"box-sizing: border-box; color: #333399;\"><span style=\"box-sizing: border-box; font-weight: bold;\"><a style=\"box-sizing: border-box; background: transparent; color: #5e5e5e; text-decoration-line: none; cursor: pointer; transition: color 0.1s linear 0s; -webkit-font-smoothing: antialiased;\" href=\"https://wall.pk/real-estate-investments-in-gujranwala-single-news-1848.aspx#royal\"><span style=\"box-sizing: border-box; color: #333399;\">Royal Palm City Gujranwala</span></a></span></span></p>\r\n<p style=\"box-sizing: border-box; margin: 0px; font-size: 13px; line-height: 20px; padding: 0px; color: #888888; font-family: \'Segoe UI\'; background-color: #f5f5f5;\"><span style=\"box-sizing: border-box; color: #333399;\"><span style=\"box-sizing: border-box; font-weight: bold;\"><a style=\"box-sizing: border-box; background: transparent; color: #5e5e5e; text-decoration-line: none; cursor: pointer; transition: color 0.1s linear 0s; -webkit-font-smoothing: antialiased;\" href=\"https://wall.pk/real-estate-investments-in-gujranwala-single-news-1848.aspx#university\"><span style=\"box-sizing: border-box; color: #333399;\">University Town Gujranwala</span></a></span></span></p>\r\n<p dir=\"ltr\" style=\"box-sizing: border-box; margin: 0px; font-size: 13px; line-height: 20px; padding: 0px; color: #888888; font-family: \'Segoe UI\'; background-color: #f5f5f5;\">Gujranwala is among those cities which are developing rapidly and remarkably in the real estate sector where I\'d say that aspiration, potential and strong expectations are major drawing forces of change. Yes, Gujranwala has become an attractive hub which holds great opportunities ripening gradually and offering high potential for modern investors. Because of the development status and thriving environment of this city with spirit and dynamics, you will find a gate towards the new possibilities in 2019.</p>', 1, 'NewsImage_thumb.jpg', '2021-02-12 15:20:14', 1),
-(3, 'This is a Test News', '<p>dksajdksajdkalsjdakshfewiufsdkjfnskdjfnienfdksfjiwejfksdfnkwefnmcdskjfweirjfkerjwesjadfhskjf.</p>\r\n<p>asdjkashdkajsdjkasdaskdjhkjhkjhkjkjjkkjjk</p>', 3, 'IMG_20181204_191547.jpg', '2021-03-09 10:33:53', 1);
-
 -- --------------------------------------------------------
 
 --
@@ -121,32 +97,6 @@ CREATE TABLE `news_type` (
   `news_type_id` int(20) NOT NULL,
   `news_type_name` varchar(255) CHARACTER SET latin1 NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `news_type`
---
-
-INSERT INTO `news_type` (`news_type_id`, `news_type_name`) VALUES
-(1, 'General News'),
-(2, 'Construction'),
-(3, 'Development');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `plots`
---
-
-CREATE TABLE `plots` (
-  `Plot_House_No` int(10) NOT NULL,
-  `Location` varchar(255) NOT NULL,
-  `SocietyMap` varchar(255) NOT NULL,
-  `Descrption` varchar(255) NOT NULL,
-  `Phase` varchar(255) NOT NULL,
-  `Sector` varchar(255) NOT NULL,
-  `Plot_House_ID` int(10) NOT NULL,
-  `USER_ID` int(10) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -215,15 +165,6 @@ CREATE TABLE `property` (
   `agent_id` int(20) NOT NULL,
   `society_id` int(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `property`
---
-
-INSERT INTO `property` (`property_id`, `property_name`, `property_description`, `property_type`, `property_plot`, `plot_for`, `property_location`, `property_price`, `property_posted_on`, `property_status`, `property_image`, `agent_id`, `society_id`) VALUES
-(1, 'asdasd', '<p>Enter Property Desfsdfdsfdsfdsfdscription Here...!!!</p>', '2', '4', 2, 'adsada', 23423432, '2021-03-09 13:24:26', 'Available', 'test-company.jpg', 1, 1),
-(2, 'wewea', '<p>Enter Property Description Here...!!!sdsd</p>', '2', '4', 1, 'aweawda', 234234, '2021-03-09 15:39:30', 'Available', 'test-company-2.png', 1, 1),
-(3, '5 Marla Plot', '<p>I have a Plot of 5 Marla on the Main road of Bedian Road.<br /><a href=\"http://www.expertflow.com/\">03128776604</a></p>', '1', '2', 1, 'Nadra Abad Bedian Road Lahore Cantt', 10000000, '2021-03-09 20:39:20', 'Available', 'test-company.jpg', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -317,15 +258,6 @@ CREATE TABLE `signup_as_agent` (
   `status` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `signup_as_agent`
---
-
-INSERT INTO `signup_as_agent` (`agent_id`, `agent_name`, `agent_email`, `agent_password`, `agent_phone`, `agent_address`, `agent_zipcode`, `agent_image`, `agent_country`, `agent_city_deal`, `agent_agency_name`, `agent_services`, `agent_company_phone`, `agent_company_address`, `agent_company_logo`, `status`) VALUES
-(1, 'Mobeen Shah', 'shahmobeen333@gmail.com', '$2y$10$hjyw0tj8nBCrG/qHHBtQKu0CavLJe6SDwry6yoOxg0FcrjnMG.uHm', '03128776604', 'Lahore, Pakistan', 54000, 'test-user.png', 'Pakistan', 'Islamabad, Lahore', 'Bukhari & Sons Pvt Ltd.', 'We provide services regarding Buying, Selling, and Renting Properties in Lahore and Islamabad.', '03128776604', 'Lahore, Pakistan', 'Logo.jpeg', 'Feature Agent'),
-(2, 'Zahid Shah', 'shahzahid@gmail.com', '$2y$10$SUb80FIYqXLzkdMYIagdsO1cT4D8Wuj9u7K2vuiKatNMMASkbo98m', '03214253974', 'Lahore, Pakistan', 54000, 'test-user.png', 'Pakistan', 'Islamabad, Ahmed Nager Chatha, Ahmadpur East', 'Zahid & Company', 'Provide Services to Buying and selling property', '03214253974', 'Lahore, Pakistan', 'test-company.jpg', 'Pakistan Agent'),
-(3, 'Waqas Nadeem', 'waqasnadeem@gmail.com', '$2y$10$GHOhz.5iYZY2lG2leji9BeE2N35F8jAEm2G8QMD8ZQrd0IbsccI4u', '03234169956', 'Lahore, Pakistan', 54000, 'test-user-2.jpg', 'Pakistan', 'Islamabad, Ahmed Nager Chatha, Ahmadpur East, Ali Khan Abad, Arifwala', 'Nadeem & Sons Pvt Ltd.', 'This is a Test Description of services', '03234169956', 'Lahore, Pakistan', 'test-company-2.png', 'Pakistan Agent');
-
 -- --------------------------------------------------------
 
 --
@@ -344,14 +276,6 @@ CREATE TABLE `signup_as_user` (
   `user_country` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `signup_as_user`
---
-
-INSERT INTO `signup_as_user` (`user_id`, `user_name`, `user_email`, `user_password`, `user_mobile`, `user_address`, `user_zipcode`, `user_image`, `user_country`) VALUES
-(1, 'Waqas Nadeem', 'waqas.nadeem@gmail.com', '$2y$10$ZVl9YJ9Q2hMC8.I5sLDaYegyrBEd4mjRSJI4o8m0UiTgTSDwgm9hW', '03214253974', 'Lahore, Pakistan', 54000, 'test-user-2.jpg', 'Pakistan'),
-(2, 'Zahid Shah', 'shahzahid@gmail.com', '$2y$10$OiF.TfbgAguJQoe0qsFxmeBO/LojK0ONa9hckJzOWY2ReKuaGNaDa', '03234169956', 'Lahore,Pakistan', 54000, 'test-user.png', 'Pakistan');
-
 -- --------------------------------------------------------
 
 --
@@ -368,13 +292,6 @@ CREATE TABLE `society` (
   `agent_id` int(20) NOT NULL,
   `city_id` int(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `society`
---
-
-INSERT INTO `society` (`society_id`, `society_name`, `society_location`, `society_descrption`, `society_image`, `society_status`, `agent_id`, `city_id`) VALUES
-(1, 'Hajveri Housing Scheme', '<p>Enter Society Description Here...!!!</p>', 'jsadasjkdhjkas', 'Pending', 'NewsImage_thumb.jpg', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -432,13 +349,6 @@ ALTER TABLE `news`
 --
 ALTER TABLE `news_type`
   ADD PRIMARY KEY (`news_type_id`);
-
---
--- Indexes for table `plots`
---
-ALTER TABLE `plots`
-  ADD PRIMARY KEY (`Plot_House_ID`),
-  ADD UNIQUE KEY `Plot/House_ID` (`Plot_House_ID`);
 
 --
 -- Indexes for table `plot_for`
@@ -508,13 +418,13 @@ ALTER TABLE `tbladmin`
 -- AUTO_INCREMENT for table `city`
 --
 ALTER TABLE `city`
-  MODIFY `city_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `city_id` int(20) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `forum`
 --
 ALTER TABLE `forum`
-  MODIFY `forum_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `forum_id` int(20) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `forum_type`
@@ -526,19 +436,13 @@ ALTER TABLE `forum_type`
 -- AUTO_INCREMENT for table `news`
 --
 ALTER TABLE `news`
-  MODIFY `news_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `news_id` int(20) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `news_type`
 --
 ALTER TABLE `news_type`
-  MODIFY `news_type_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
---
--- AUTO_INCREMENT for table `plots`
---
-ALTER TABLE `plots`
-  MODIFY `Plot_House_ID` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `news_type_id` int(20) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `plot_for`
@@ -556,7 +460,7 @@ ALTER TABLE `plot_type`
 -- AUTO_INCREMENT for table `property`
 --
 ALTER TABLE `property`
-  MODIFY `property_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `property_id` int(20) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `property_type`
@@ -574,19 +478,19 @@ ALTER TABLE `province`
 -- AUTO_INCREMENT for table `signup_as_agent`
 --
 ALTER TABLE `signup_as_agent`
-  MODIFY `agent_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `agent_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `signup_as_user`
 --
 ALTER TABLE `signup_as_user`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `society`
 --
 ALTER TABLE `society`
-  MODIFY `society_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `society_id` int(20) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `tbladmin`
@@ -597,12 +501,6 @@ ALTER TABLE `tbladmin`
 --
 -- Constraints for dumped tables
 --
-
---
--- Constraints for table `plots`
---
-ALTER TABLE `plots`
-  ADD CONSTRAINT `plots_ibfk_1` FOREIGN KEY (`USER_ID`) REFERENCES `signup_as_agent` (`agent_id`);
 
 --
 -- Constraints for table `searching`
