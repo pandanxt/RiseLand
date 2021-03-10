@@ -3,16 +3,18 @@
 require 'include/conn.php';
 
 $name = $_POST['name'];
-$description = $_POST['description'];
-$type = $_POST['type'];
-$filename = $_FILES["file"]["name"]; 
-$tempname = $_FILES["file"]["tmp_name"];     
-$folder = "../img/".$filename; 
-$postOn = date("Y-m-d H:i:s");
-$postBy = $_POST['admin'];
+
 
 if (isset($_POST['news-submit'])) {
-	
+		
+		$description = $_POST['description'];
+		$type = $_POST['type'];
+		$filename = $_FILES["file"]["name"]; 
+		$tempname = $_FILES["file"]["tmp_name"];     
+		$folder = "../img/".$filename; 
+		$postOn = date("Y-m-d H:i:s");
+		$postBy = $_POST['admin'];
+
 	if (empty($name)||empty($description)||empty($type)) {
 		header("Location: news-add.php?error=emptyfields&name=".$name."&description=".$description."&newstype=".$type);
 		exit();
@@ -91,7 +93,44 @@ mysqli_close($db);
 				mysqli_stmt_bind_param($stmt,"s",$name);
 				mysqli_stmt_execute($stmt);
 				
-				echo '<script type="text/javascript">alert("New City Type is Successfully Added");window.location = "news-type.php";</script>';								
+				echo '<script type="text/javascript">alert("New News Type is Successfully Added");window.location = "news-type.php";</script>';								
+				exit();
+				}
+			}
+		}			
+	}
+mysqli_stmt_close($stmt);
+mysqli_close($db);
+}elseif (isset($_POST['forum-type-submit'])) {
+	
+	if (empty($name)) {
+		header("Location: forum-type-add.php?error=emptyfields&name=".$name);
+		exit();
+	}else{
+		$sql = "SELECT * FROM `forum_type` WHERE `forum_type_name` = ?";
+		$stmt = mysqli_stmt_init($db);
+		if (!mysqli_stmt_prepare($stmt,$sql)) {
+			header("Location: forum-type-add.php?error=sqlerror");
+			exit();
+		}else{
+			mysqli_stmt_bind_param($stmt,"s",$name);
+			mysqli_stmt_execute($stmt);
+			mysqli_stmt_store_result($stmt);
+			$resultCheck = mysqli_stmt_num_rows($stmt);
+			if ($resultCheck > 0) {
+				header("Location: forum-type-add.php?error=forumTypeNameAlreadyPost");
+				exit();
+			}else{
+				$sql = "INSERT INTO `forum_type`(`forum_type_name`) VALUES (?)";
+				mysqli_stmt_execute($stmt);
+				if (!mysqli_stmt_prepare($stmt,$sql)) {
+				header("Location: forum-type-add.php?error=sqlerror");
+				exit();
+				}else{
+				mysqli_stmt_bind_param($stmt,"s",$name);
+				mysqli_stmt_execute($stmt);
+				
+				echo '<script type="text/javascript">alert("New Forum Type is Successfully Added");window.location = "forum-type.php";</script>';								
 				exit();
 				}
 			}

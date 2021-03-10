@@ -43,18 +43,40 @@
           </ul>
         </li> -->
         <li class="treeview">
-          <a href="#"><i class="fa fa-paper-plane-o"></i> <span>Posts</span>
+          <a href="#"><i class="fa fa-paper-plane-o"></i> <span>Rise Land News</span>
             <span class="pull-right-container">
                 <i class="fa fa-angle-left pull-right"></i>
               </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="news.php">Rise Land News</a></li>
-            <li><a href="news-type.php">News Type</a></li>
+            <li><a href="news.php"><i class="fa fa-paper-plane-o"></i> News</a></li>
+            <li><a href="news-type.php"><i class="fa fa-paper-plane-o"></i> News Type</a></li>
           </ul>
         </li>
-        <li><a href="admin-user.php"><i class="fa fa-users"></i> <span>Admin User</span></a></li>
-        <li><a href="simple-user.php"><i class="fa fa-users"></i> <span>Website User</span></a></li>
+        <li class="treeview">
+          <a href="#"><i class="fa fa-lightbulb-o "></i> <span>Rise Land Forum</span>
+            <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="forum.php"><i class="fa fa-lightbulb-o "></i> Forum</a></li>
+            <li><a href="forum-type.php"><i class="fa fa-lightbulb-o "></i> Forum Type</a></li>
+          </ul>
+        </li>
+        <li class="treeview">
+          <a href="#"><i class="fa fa-users"></i> <span>Rise Land Users</span>
+            <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="admin-user.php"><i class="fa fa-users"></i> Admin User</a></li>
+            <li><a href="simple-user.php"><i class="fa fa-users"></i> Website User</a></li>
+          </ul>
+        </li>
+        <!-- <li><a href="admin-user.php"><i class="fa fa-users"></i> <span>Admin User</span></a></li>
+        <li><a href="simple-user.php"><i class="fa fa-users"></i> <span>Website User</span></a></li> -->
         <li><a href="province.php"><i class="fa fa-map"></i> <span>Province</span></a></li>
         <li><a href="city.php"><i class="fa fa-map"></i> <span>City</span></a></li>
         <li><a href="#"><i class="fa fa-clone"></i> <span>Categories</span></a></li>
