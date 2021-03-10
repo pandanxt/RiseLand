@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 06, 2021 at 11:41 PM
+-- Generation Time: Mar 10, 2021 at 09:45 AM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 7.2.23
 
@@ -107,8 +107,9 @@ CREATE TABLE `news` (
 --
 
 INSERT INTO `news` (`news_id`, `news_name`, `news_description`, `news_type`, `news_image`, `news_post_on`, `news_post_by`) VALUES
-(1, 'Earth Quick in Pakistan Region', '<p style=\"text-align: center;\"><em>Enter News Description Here...!!!</em></p>', 2, 'Mubeen-profile.jpg', '2021-02-12 14:19:59', 1),
-(2, 'Top 5 Best Real Estate Investments In Gujranwala 2019', '<p dir=\"ltr\" style=\"box-sizing: border-box; margin: 0px; font-size: 13px; line-height: 20px; padding: 0px; color: #888888; font-family: \'Segoe UI\'; background-color: #f5f5f5;\">Major developers are focused on the residential market as high demand for more communities across the country continues to drive purchases, especially in the affordable housing sector. Previously only large cities were considered but now with the overall revolution of the real estate, a quality living and investment options are bright in all the cities of Pakistan.&nbsp;</p>\r\n<p style=\"box-sizing: border-box; margin: 0px; font-size: 13px; line-height: 20px; padding: 0px; color: #888888; font-family: \'Segoe UI\'; background-color: #f5f5f5;\"><span style=\"box-sizing: border-box; color: #333399;\"><span style=\"box-sizing: border-box; font-weight: bold;\"><a style=\"box-sizing: border-box; background: transparent; color: #5e5e5e; text-decoration-line: none; cursor: pointer; transition: color 0.1s linear 0s; -webkit-font-smoothing: antialiased;\" href=\"https://wall.pk/real-estate-investments-in-gujranwala-single-news-1848.aspx#master\"><span style=\"box-sizing: border-box; color: #333399;\">Master City Gujranwala</span></a></span></span></p>\r\n<p style=\"box-sizing: border-box; margin: 0px; font-size: 13px; line-height: 20px; padding: 0px; color: #888888; font-family: \'Segoe UI\'; background-color: #f5f5f5;\"><span style=\"box-sizing: border-box; color: #333399;\"><span style=\"box-sizing: border-box; font-weight: bold;\"><a style=\"box-sizing: border-box; background: transparent; color: #5e5e5e; text-decoration-line: none; cursor: pointer; transition: color 0.1s linear 0s; -webkit-font-smoothing: antialiased;\" href=\"https://wall.pk/real-estate-investments-in-gujranwala-single-news-1848.aspx#dha\"><span style=\"box-sizing: border-box; color: #333399;\">DHA Gujranwala</span></a></span></span></p>\r\n<p style=\"box-sizing: border-box; margin: 0px; font-size: 13px; line-height: 20px; padding: 0px; color: #888888; font-family: \'Segoe UI\'; background-color: #f5f5f5;\"><span style=\"box-sizing: border-box; color: #333399;\"><span style=\"box-sizing: border-box; font-weight: bold;\"><a style=\"box-sizing: border-box; background: transparent; color: #5e5e5e; text-decoration-line: none; cursor: pointer; transition: color 0.1s linear 0s; -webkit-font-smoothing: antialiased;\" href=\"https://wall.pk/real-estate-investments-in-gujranwala-single-news-1848.aspx#citi\"><span style=\"box-sizing: border-box; color: #333399;\">Citi Housing Gujranwala</span></a></span></span></p>\r\n<p style=\"box-sizing: border-box; margin: 0px; font-size: 13px; line-height: 20px; padding: 0px; color: #888888; font-family: \'Segoe UI\'; background-color: #f5f5f5;\"><span style=\"box-sizing: border-box; color: #333399;\"><span style=\"box-sizing: border-box; font-weight: bold;\"><a style=\"box-sizing: border-box; background: transparent; color: #5e5e5e; text-decoration-line: none; cursor: pointer; transition: color 0.1s linear 0s; -webkit-font-smoothing: antialiased;\" href=\"https://wall.pk/real-estate-investments-in-gujranwala-single-news-1848.aspx#royal\"><span style=\"box-sizing: border-box; color: #333399;\">Royal Palm City Gujranwala</span></a></span></span></p>\r\n<p style=\"box-sizing: border-box; margin: 0px; font-size: 13px; line-height: 20px; padding: 0px; color: #888888; font-family: \'Segoe UI\'; background-color: #f5f5f5;\"><span style=\"box-sizing: border-box; color: #333399;\"><span style=\"box-sizing: border-box; font-weight: bold;\"><a style=\"box-sizing: border-box; background: transparent; color: #5e5e5e; text-decoration-line: none; cursor: pointer; transition: color 0.1s linear 0s; -webkit-font-smoothing: antialiased;\" href=\"https://wall.pk/real-estate-investments-in-gujranwala-single-news-1848.aspx#university\"><span style=\"box-sizing: border-box; color: #333399;\">University Town Gujranwala</span></a></span></span></p>\r\n<p dir=\"ltr\" style=\"box-sizing: border-box; margin: 0px; font-size: 13px; line-height: 20px; padding: 0px; color: #888888; font-family: \'Segoe UI\'; background-color: #f5f5f5;\">Gujranwala is among those cities which are developing rapidly and remarkably in the real estate sector where I\'d say that aspiration, potential and strong expectations are major drawing forces of change. Yes, Gujranwala has become an attractive hub which holds great opportunities ripening gradually and offering high potential for modern investors. Because of the development status and thriving environment of this city with spirit and dynamics, you will find a gate towards the new possibilities in 2019.</p>', 1, 'NewsImage_thumb.jpg', '2021-02-12 15:20:14', 1);
+(1, 'Earth Quick in Pakistan Region', '<p style=\"text-align: center;\"><em>Enter News Description Here...!!!</em></p>', 2, 'NewsImage_thumb.jpg', '2021-02-12 14:19:59', 1),
+(2, 'Top 5 Best Real Estate Investments In Gujranwala 2019', '<p dir=\"ltr\" style=\"box-sizing: border-box; margin: 0px; font-size: 13px; line-height: 20px; padding: 0px; color: #888888; font-family: \'Segoe UI\'; background-color: #f5f5f5;\">Major developers are focused on the residential market as high demand for more communities across the country continues to drive purchases, especially in the affordable housing sector. Previously only large cities were considered but now with the overall revolution of the real estate, a quality living and investment options are bright in all the cities of Pakistan.&nbsp;</p>\r\n<p style=\"box-sizing: border-box; margin: 0px; font-size: 13px; line-height: 20px; padding: 0px; color: #888888; font-family: \'Segoe UI\'; background-color: #f5f5f5;\"><span style=\"box-sizing: border-box; color: #333399;\"><span style=\"box-sizing: border-box; font-weight: bold;\"><a style=\"box-sizing: border-box; background: transparent; color: #5e5e5e; text-decoration-line: none; cursor: pointer; transition: color 0.1s linear 0s; -webkit-font-smoothing: antialiased;\" href=\"https://wall.pk/real-estate-investments-in-gujranwala-single-news-1848.aspx#master\"><span style=\"box-sizing: border-box; color: #333399;\">Master City Gujranwala</span></a></span></span></p>\r\n<p style=\"box-sizing: border-box; margin: 0px; font-size: 13px; line-height: 20px; padding: 0px; color: #888888; font-family: \'Segoe UI\'; background-color: #f5f5f5;\"><span style=\"box-sizing: border-box; color: #333399;\"><span style=\"box-sizing: border-box; font-weight: bold;\"><a style=\"box-sizing: border-box; background: transparent; color: #5e5e5e; text-decoration-line: none; cursor: pointer; transition: color 0.1s linear 0s; -webkit-font-smoothing: antialiased;\" href=\"https://wall.pk/real-estate-investments-in-gujranwala-single-news-1848.aspx#dha\"><span style=\"box-sizing: border-box; color: #333399;\">DHA Gujranwala</span></a></span></span></p>\r\n<p style=\"box-sizing: border-box; margin: 0px; font-size: 13px; line-height: 20px; padding: 0px; color: #888888; font-family: \'Segoe UI\'; background-color: #f5f5f5;\"><span style=\"box-sizing: border-box; color: #333399;\"><span style=\"box-sizing: border-box; font-weight: bold;\"><a style=\"box-sizing: border-box; background: transparent; color: #5e5e5e; text-decoration-line: none; cursor: pointer; transition: color 0.1s linear 0s; -webkit-font-smoothing: antialiased;\" href=\"https://wall.pk/real-estate-investments-in-gujranwala-single-news-1848.aspx#citi\"><span style=\"box-sizing: border-box; color: #333399;\">Citi Housing Gujranwala</span></a></span></span></p>\r\n<p style=\"box-sizing: border-box; margin: 0px; font-size: 13px; line-height: 20px; padding: 0px; color: #888888; font-family: \'Segoe UI\'; background-color: #f5f5f5;\"><span style=\"box-sizing: border-box; color: #333399;\"><span style=\"box-sizing: border-box; font-weight: bold;\"><a style=\"box-sizing: border-box; background: transparent; color: #5e5e5e; text-decoration-line: none; cursor: pointer; transition: color 0.1s linear 0s; -webkit-font-smoothing: antialiased;\" href=\"https://wall.pk/real-estate-investments-in-gujranwala-single-news-1848.aspx#royal\"><span style=\"box-sizing: border-box; color: #333399;\">Royal Palm City Gujranwala</span></a></span></span></p>\r\n<p style=\"box-sizing: border-box; margin: 0px; font-size: 13px; line-height: 20px; padding: 0px; color: #888888; font-family: \'Segoe UI\'; background-color: #f5f5f5;\"><span style=\"box-sizing: border-box; color: #333399;\"><span style=\"box-sizing: border-box; font-weight: bold;\"><a style=\"box-sizing: border-box; background: transparent; color: #5e5e5e; text-decoration-line: none; cursor: pointer; transition: color 0.1s linear 0s; -webkit-font-smoothing: antialiased;\" href=\"https://wall.pk/real-estate-investments-in-gujranwala-single-news-1848.aspx#university\"><span style=\"box-sizing: border-box; color: #333399;\">University Town Gujranwala</span></a></span></span></p>\r\n<p dir=\"ltr\" style=\"box-sizing: border-box; margin: 0px; font-size: 13px; line-height: 20px; padding: 0px; color: #888888; font-family: \'Segoe UI\'; background-color: #f5f5f5;\">Gujranwala is among those cities which are developing rapidly and remarkably in the real estate sector where I\'d say that aspiration, potential and strong expectations are major drawing forces of change. Yes, Gujranwala has become an attractive hub which holds great opportunities ripening gradually and offering high potential for modern investors. Because of the development status and thriving environment of this city with spirit and dynamics, you will find a gate towards the new possibilities in 2019.</p>', 1, 'NewsImage_thumb.jpg', '2021-02-12 15:20:14', 1),
+(3, 'This is a Test News', '<p>dksajdksajdkalsjdakshfewiufsdkjfnskdjfnienfdksfjiwejfksdfnkwefnmcdskjfweirjfkerjwesjadfhskjf.</p>\r\n<p>asdjkashdkajsdjkasdaskdjhkjhkjhkjkjjkkjjk</p>', 3, 'IMG_20181204_191547.jpg', '2021-03-09 10:33:53', 1);
 
 -- --------------------------------------------------------
 
@@ -205,6 +206,7 @@ CREATE TABLE `property` (
   `property_description` longtext NOT NULL,
   `property_type` varchar(255) NOT NULL,
   `property_plot` varchar(255) NOT NULL,
+  `plot_for` int(20) NOT NULL,
   `property_location` varchar(255) NOT NULL,
   `property_price` int(20) NOT NULL,
   `property_posted_on` datetime NOT NULL,
@@ -213,6 +215,15 @@ CREATE TABLE `property` (
   `agent_id` int(20) NOT NULL,
   `society_id` int(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `property`
+--
+
+INSERT INTO `property` (`property_id`, `property_name`, `property_description`, `property_type`, `property_plot`, `plot_for`, `property_location`, `property_price`, `property_posted_on`, `property_status`, `property_image`, `agent_id`, `society_id`) VALUES
+(1, 'asdasd', '<p>Enter Property Desfsdfdsfdsfdsfdscription Here...!!!</p>', '2', '4', 2, 'adsada', 23423432, '2021-03-09 13:24:26', 'Available', 'test-company.jpg', 1, 1),
+(2, 'wewea', '<p>Enter Property Description Here...!!!sdsd</p>', '2', '4', 1, 'aweawda', 234234, '2021-03-09 15:39:30', 'Available', 'test-company-2.png', 1, 1),
+(3, '5 Marla Plot', '<p>I have a Plot of 5 Marla on the Main road of Bedian Road.<br /><a href=\"http://www.expertflow.com/\">03128776604</a></p>', '1', '2', 1, 'Nadra Abad Bedian Road Lahore Cantt', 10000000, '2021-03-09 20:39:20', 'Available', 'test-company.jpg', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -311,7 +322,7 @@ CREATE TABLE `signup_as_agent` (
 --
 
 INSERT INTO `signup_as_agent` (`agent_id`, `agent_name`, `agent_email`, `agent_password`, `agent_phone`, `agent_address`, `agent_zipcode`, `agent_image`, `agent_country`, `agent_city_deal`, `agent_agency_name`, `agent_services`, `agent_company_phone`, `agent_company_address`, `agent_company_logo`, `status`) VALUES
-(1, 'Mobeen Shah', 'shahmobeen333@gmail.com', '$2y$10$hjyw0tj8nBCrG/qHHBtQKu0CavLJe6SDwry6yoOxg0FcrjnMG.uHm', '03128776604', 'Lahore, Pakistan', 54000, 'test-user.png', 'Pakistan', 'Islamabad, Lahore', 'Bukhari & Sons Pvt Ltd.', 'We provide services regarding Buying, Selling, and Renting Properties in Lahore and Islamabad.', '03128776604', 'Lahore, Pakistan', 'test-company.jpg', 'Feature Agent'),
+(1, 'Mobeen Shah', 'shahmobeen333@gmail.com', '$2y$10$hjyw0tj8nBCrG/qHHBtQKu0CavLJe6SDwry6yoOxg0FcrjnMG.uHm', '03128776604', 'Lahore, Pakistan', 54000, 'test-user.png', 'Pakistan', 'Islamabad, Lahore', 'Bukhari & Sons Pvt Ltd.', 'We provide services regarding Buying, Selling, and Renting Properties in Lahore and Islamabad.', '03128776604', 'Lahore, Pakistan', 'Logo.jpeg', 'Feature Agent'),
 (2, 'Zahid Shah', 'shahzahid@gmail.com', '$2y$10$SUb80FIYqXLzkdMYIagdsO1cT4D8Wuj9u7K2vuiKatNMMASkbo98m', '03214253974', 'Lahore, Pakistan', 54000, 'test-user.png', 'Pakistan', 'Islamabad, Ahmed Nager Chatha, Ahmadpur East', 'Zahid & Company', 'Provide Services to Buying and selling property', '03214253974', 'Lahore, Pakistan', 'test-company.jpg', 'Pakistan Agent'),
 (3, 'Waqas Nadeem', 'waqasnadeem@gmail.com', '$2y$10$GHOhz.5iYZY2lG2leji9BeE2N35F8jAEm2G8QMD8ZQrd0IbsccI4u', '03234169956', 'Lahore, Pakistan', 54000, 'test-user-2.jpg', 'Pakistan', 'Islamabad, Ahmed Nager Chatha, Ahmadpur East, Ali Khan Abad, Arifwala', 'Nadeem & Sons Pvt Ltd.', 'This is a Test Description of services', '03234169956', 'Lahore, Pakistan', 'test-company-2.png', 'Pakistan Agent');
 
@@ -363,7 +374,7 @@ CREATE TABLE `society` (
 --
 
 INSERT INTO `society` (`society_id`, `society_name`, `society_location`, `society_descrption`, `society_image`, `society_status`, `agent_id`, `city_id`) VALUES
-(1, 'asdhasjd', '<p>Enter Society Description Here...!!!</p>', 'jsadasjkdhjkas', 'Pending', 'NewsImage_thumb.jpg', 1, 1);
+(1, 'Hajveri Housing Scheme', '<p>Enter Society Description Here...!!!</p>', 'jsadasjkdhjkas', 'Pending', 'NewsImage_thumb.jpg', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -515,7 +526,7 @@ ALTER TABLE `forum_type`
 -- AUTO_INCREMENT for table `news`
 --
 ALTER TABLE `news`
-  MODIFY `news_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `news_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `news_type`
@@ -545,7 +556,7 @@ ALTER TABLE `plot_type`
 -- AUTO_INCREMENT for table `property`
 --
 ALTER TABLE `property`
-  MODIFY `property_id` int(20) NOT NULL AUTO_INCREMENT;
+  MODIFY `property_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `property_type`
